@@ -3,6 +3,7 @@
  * March 29 2014
  * File name: MainActivity.java
  * Project: 7MinutesWithTheLord
+ * Public repository: https://github.com/yacob89/7MinutesWithTheLord
  */
 
 package com.example.minuteswiththelord;
