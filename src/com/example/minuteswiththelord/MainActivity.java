@@ -26,6 +26,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	 private boolean timerHasStarted = false;
 	 private Button startB;
+	 private Button exitButton;
 	 public TextView text;
 	 public TextView title;
 	 public TextView description;
@@ -36,25 +37,32 @@ public class MainActivity extends Activity implements OnClickListener {
 	 
 	 //Menyeru nama Tuhan
 	 private CountDownTimer menyeru_countDownTimer;
-	 private final long menyeru_startTime = 30 * 1000;
+	 //private final long menyeru_startTime = 30 * 1000;
+	 private final long menyeru_startTime = 5 * 1000;
 	 // Berdoa
 	 private CountDownTimer berdoa_countDownTimer;
-	 private final long berdoa_startTime = 60 * 1000;
+	 //private final long berdoa_startTime = 60 * 1000;
+	 private final long berdoa_startTime = 5 * 1000;
 	 // Doa-baca
 	 private CountDownTimer doabaca_countDownTimer;
-	 private final long doabaca_startTime = 150 * 1000;
+	 //private final long doabaca_startTime = 150 * 1000;
+	 private final long doabaca_startTime = 5 * 1000;
 	 // Mengaku Dosa
 	 private CountDownTimer mengakuDosa_countDownTimer;
-	 private final long mengakuDosa_startTime = 60 * 1000;
+	 //private final long mengakuDosa_startTime = 60 * 1000;
+	 private final long mengakuDosa_startTime = 5 * 1000;
 	 // Konsikrasi
 	 private CountDownTimer konsikrasi_countDownTimer;
-	 private final long konsikrasi_startTime = 30 * 1000;
+	 //private final long konsikrasi_startTime = 30 * 1000;
+	 private final long konsikrasi_startTime = 5 * 1000;
 	 // Mengucap Syukur
 	 private CountDownTimer ucapSyukur_countDownTimer;
-	 private final long ucapSyukur_startTime = 30 * 1000;
+	 //private final long ucapSyukur_startTime = 30 * 1000;
+	 private final long ucapSyukur_startTime = 5 * 1000;
 	 // Doa Permohonan
 	 private CountDownTimer doaPermohonan_countDownTimer;
-	 private final long doaPermohonan_startTime = 60 * 1000;
+	 //private final long doaPermohonan_startTime = 60 * 1000;
+	 private final long doaPermohonan_startTime = 5 * 1000;
 	 // 
 	 private int counter;
 
@@ -65,7 +73,7 @@ public class MainActivity extends Activity implements OnClickListener {
         
         // UI Initialization
         startB = (Button) this.findViewById(R.id.button);
-        startB.setOnClickListener(this);
+        exitButton = (Button) this.findViewById(R.id.exitButton);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -85,7 +93,7 @@ public class MainActivity extends Activity implements OnClickListener {
         // Use default notification
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         //r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-        Uri path = Uri.parse("android.resource://com.example.minuteswiththelord/"+R.raw.pollux);
+        Uri path = Uri.parse("android.resource://com.example.minuteswiththelord/"+R.raw.sirius);
         r = RingtoneManager.getRingtone(getApplicationContext(), path);
         
         // Set custom roboto fonts
@@ -99,6 +107,10 @@ public class MainActivity extends Activity implements OnClickListener {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         
         timerHasStarted = false;
+        
+        // Hid Keluar Button
+        exitButton.setVisibility(View.GONE);
+        startB.setVisibility(View.VISIBLE);
     }
 
 
@@ -171,8 +183,10 @@ public class MainActivity extends Activity implements OnClickListener {
     	  }
     	  else if (counter == 1)
     	  {
+    		  exitButton.setVisibility(View.VISIBLE);
     		  r.play();
     		  title.setText("Selesai");
+    		  description.setText("");
     		  text.setText("Haleluya!");
     	      startB.setText("Ulangi");
     	      timerHasStarted = false;
@@ -193,7 +207,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+	}
+	
+	public void startActivity(View v)
+	{
 		if (!timerHasStarted) {
+			exitButton.setVisibility(View.GONE);
 			counter = 7;
 		       menyeru_countDownTimer.start();
 		       timerHasStarted = true;
@@ -212,7 +231,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		       
 		       timerHasStarted = false;
 		       startB.setText("Ulangi");
+		       exitButton.setVisibility(View.VISIBLE);
+		       startB.setVisibility(View.VISIBLE);
 		      }
+	}
+	
+	public void exitApp(View v)
+	{
+		finish();          
+        moveTaskToBack(true);
 	}
     
 }

@@ -14,6 +14,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:onClick="startActivity"
+        android:textColor="#000000"
+        android:background="@layout/custom_button"
+        android:textSize="24sp"
         android:text="Mulai" />
 
     <TextView
@@ -22,6 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:textColor="#66CCFF"
         android:textSize="50sp"
         android:text="" />
 
@@ -33,7 +38,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp"
         android:textSize="24sp"
-        android:text="7 Minutes With The Lord" />
+        android:textColor="#66CCFF"
+        android:text="7 Menit Bersama Tuhan" />
 
     <TextView
         android:id="@+id/textView2"
@@ -43,7 +49,20 @@
         android:layout_below="@+id/textView1"
         android:layout_marginTop="26dp"
         android:textSize="18sp"
+        android:textColor="#66CCFF"
         android:gravity ="center"
         android:text="TextView" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/button"
+        android:layout_marginBottom="21dp"
+        android:onClick="exitApp"
+        android:background="@layout/custom_button_2"
+        android:textSize="24sp"
+        android:text="Keluar" />
 
 </RelativeLayout>
