@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Start" />
+        android:text="Mulai" />
 
     <TextView
         android:id="@+id/timer"

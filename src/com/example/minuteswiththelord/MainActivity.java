@@ -84,7 +84,9 @@ public class MainActivity extends Activity implements OnClickListener {
         // Notification sound initialization
         // Use default notification
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        //r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        Uri path = Uri.parse("android.resource://com.example.minuteswiththelord/"+R.raw.pollux);
+        r = RingtoneManager.getRingtone(getApplicationContext(), path);
         
         // Set custom roboto fonts
         Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
@@ -172,7 +174,7 @@ public class MainActivity extends Activity implements OnClickListener {
     		  r.play();
     		  title.setText("Selesai");
     		  text.setText("Haleluya!");
-    	      startB.setText("RESTART");
+    	      startB.setText("Ulangi");
     	      timerHasStarted = false;
     	  }
       }
@@ -195,7 +197,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			counter = 7;
 		       menyeru_countDownTimer.start();
 		       timerHasStarted = true;
-		       startB.setText("STOP");
+		       startB.setText("Berhenti");
 		       title.setText("Menyeru Nama Tuhan");
 		       description.setText("Berseru kepada nama Tuhan untuk mengarahkan pikiran kita kepada roh");
 		      } else {
@@ -209,7 +211,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		       doaPermohonan_countDownTimer.cancel();
 		       
 		       timerHasStarted = false;
-		       startB.setText("RESTART");
+		       startB.setText("Ulangi");
 		      }
 	}
     
