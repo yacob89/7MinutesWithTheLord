@@ -6,7 +6,7 @@
  * Public repository: https://github.com/yacob89/7MinutesWithTheLord
  */
 
-package com.example.minuteswiththelord;
+package com.churchinbandung.minuteswiththelord;
 
 import android.app.Activity;
 import android.graphics.Typeface;
@@ -21,6 +21,7 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import com.churchinbandung.minuteswiththelord.R;
 
 public class MainActivity extends Activity implements OnClickListener {
 	
@@ -37,32 +38,32 @@ public class MainActivity extends Activity implements OnClickListener {
 	 
 	 //Menyeru nama Tuhan
 	 private CountDownTimer menyeru_countDownTimer;
-	 //private final long menyeru_startTime = 30 * 1000;
-	 private final long menyeru_startTime = 5 * 1000;
+	 private final long menyeru_startTime = 30 * 1000;
+	 //private final long menyeru_startTime = 5 * 1000;
 	 // Berdoa
 	 private CountDownTimer berdoa_countDownTimer;
-	 //private final long berdoa_startTime = 60 * 1000;
-	 private final long berdoa_startTime = 5 * 1000;
+	 private final long berdoa_startTime = 60 * 1000;
+	 //private final long berdoa_startTime = 5 * 1000;
 	 // Doa-baca
 	 private CountDownTimer doabaca_countDownTimer;
-	 //private final long doabaca_startTime = 150 * 1000;
-	 private final long doabaca_startTime = 5 * 1000;
+	 private final long doabaca_startTime = 150 * 1000;
+	 //private final long doabaca_startTime = 5 * 1000;
 	 // Mengaku Dosa
 	 private CountDownTimer mengakuDosa_countDownTimer;
-	 //private final long mengakuDosa_startTime = 60 * 1000;
-	 private final long mengakuDosa_startTime = 5 * 1000;
+	 private final long mengakuDosa_startTime = 60 * 1000;
+	 //private final long mengakuDosa_startTime = 5 * 1000;
 	 // Konsikrasi
 	 private CountDownTimer konsikrasi_countDownTimer;
-	 //private final long konsikrasi_startTime = 30 * 1000;
-	 private final long konsikrasi_startTime = 5 * 1000;
+	 private final long konsikrasi_startTime = 30 * 1000;
+	 //private final long konsikrasi_startTime = 5 * 1000;
 	 // Mengucap Syukur
 	 private CountDownTimer ucapSyukur_countDownTimer;
-	 //private final long ucapSyukur_startTime = 30 * 1000;
-	 private final long ucapSyukur_startTime = 5 * 1000;
+	 private final long ucapSyukur_startTime = 30 * 1000;
+	 //private final long ucapSyukur_startTime = 5 * 1000;
 	 // Doa Permohonan
 	 private CountDownTimer doaPermohonan_countDownTimer;
-	 //private final long doaPermohonan_startTime = 60 * 1000;
-	 private final long doaPermohonan_startTime = 5 * 1000;
+	 private final long doaPermohonan_startTime = 60 * 1000;
+	 //private final long doaPermohonan_startTime = 5 * 1000;
 	 // 
 	 private int counter;
 
@@ -93,12 +94,13 @@ public class MainActivity extends Activity implements OnClickListener {
         // Use default notification
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         //r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-        Uri path = Uri.parse("android.resource://com.example.minuteswiththelord/"+R.raw.sirius);
+        Uri path = Uri.parse("android.resource://com.churchinbandung.minuteswiththelord/"+R.raw.sirius);
         r = RingtoneManager.getRingtone(getApplicationContext(), path);
         
         // Set custom roboto fonts
         Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
         startB.setTypeface(mFont);
+        exitButton.setTypeface(mFont);
         text.setTypeface(mFont);
         title.setTypeface(mFont);
         description.setTypeface(mFont);
