@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.churchinbandung.minuteswiththelord;
+package com.gerejadibandung.minuteswiththelord;
 
 public final class R {
     public static final class attr {

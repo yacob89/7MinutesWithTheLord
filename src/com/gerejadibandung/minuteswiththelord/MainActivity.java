@@ -1,12 +1,12 @@
 /*
- * Creator: yacob
+ * Creator: churchinbandung
  * March 29 2014
  * File name: MainActivity.java
  * Project: 7MinutesWithTheLord
  * Public repository: https://github.com/yacob89/7MinutesWithTheLord
  */
 
-package com.churchinbandung.minuteswiththelord;
+package com.gerejadibandung.minuteswiththelord;
 
 import android.app.Activity;
 import android.graphics.Typeface;
@@ -21,7 +21,8 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import com.churchinbandung.minuteswiththelord.R;
+
+import com.gerejadibandung.minuteswiththelord.R;
 
 public class MainActivity extends Activity implements OnClickListener {
 	
@@ -94,7 +95,7 @@ public class MainActivity extends Activity implements OnClickListener {
         // Use default notification
         notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         //r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-        Uri path = Uri.parse("android.resource://com.churchinbandung.minuteswiththelord/"+R.raw.sirius);
+        Uri path = Uri.parse("android.resource://com.gerejadibandung.minuteswiththelord/"+R.raw.sirius);
         r = RingtoneManager.getRingtone(getApplicationContext(), path);
         
         // Set custom roboto fonts

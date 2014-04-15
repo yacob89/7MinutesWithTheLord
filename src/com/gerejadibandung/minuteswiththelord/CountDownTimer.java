@@ -1,4 +1,4 @@
-package com.churchinbandung.minuteswiththelord;
+package com.gerejadibandung.minuteswiththelord;
 
 import android.os.Handler;
 import android.os.Message;
