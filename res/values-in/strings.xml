@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">7 Menit Bersama Tuhan</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="start">Mulai</string>
+    <string name="title">7 Menit Bersama Tuhan</string>
+    <string name="exit">Keluar</string>
+    
+    <string name="calling">Menyeru Nama Tuhan</string>
+    <string name="calling_desc">Berseru kepada nama Tuhan untuk mengarahkan pikiran kita kepada roh.</string>
+    
+    <string name="praying">Berdoa</string>
+    <string name="praying_desc">Membuka hati kita, melembutkan hati kita, mengosongkan diri kita. "Tuhan, aku cinta pada-Mu"</string>
+    
+    <string name="pray_reading">Doa Baca</string>
+    <string name="pray_reading_desc">Dengan roh mendoakan 1_2 ayat. Mengubah ayat2 itu menjadi doa pribadi kita.</string>
+    
+    <string name="confession">Mengaku Dosa</string>
+    <string name="confession_desc">Mengakui dosa2 dan pelanggaran2  kita.  Mohon pengampunan dan pembasuhan."</string>
+    
+    <string name="consecration">Konsikrasi</string>
+    <string name="consecration_desc">Mempersembahkan diri kepada Tuhan dengan segar.</string>
+    
+    <string name="thanksgiving">Mengucap Syukur</string>
+    <string name="thanksgiving_desc">Mengucap syukur atas segala sesuatu dan memuji Dia.</string>
+    
+    <string name="petition">Doa Permohonan</string>
+    <string name="petition_desc">Meminta kepada Tuhan untuk keperluan2  kita, pertumbuhan, orang2 yang perlu keselamatan.</string>
+
+    <string name="the_end">Selesai</string>
+    <string name="halelujah">Haleluya</string>
+    <string name="reset">Ulangi</string>
+    <string name="stop">Berhenti</string>
+    
+</resources>

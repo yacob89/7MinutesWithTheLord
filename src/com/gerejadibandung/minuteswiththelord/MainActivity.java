@@ -22,10 +22,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.gerejadibandung.minuteswiththelord.R;
-
 public class MainActivity extends Activity implements OnClickListener {
 	
+	public TextList textList;
 	 private boolean timerHasStarted = false;
 	 private Button startB;
 	 private Button exitButton;
@@ -73,6 +72,7 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        textListInit(); //Strings initialization
         // UI Initialization
         startB = (Button) this.findViewById(R.id.button);
         exitButton = (Button) this.findViewById(R.id.exitButton);
@@ -139,48 +139,48 @@ public class MainActivity extends Activity implements OnClickListener {
       public void onFinish() {
     	  if (counter == 7){
     		  r.play();
-    		  title.setText("Berdoa");
-    		  description.setText("Membuka hati kita, melembutkan hati kita, mengosongkan diri kita. 'Tuhan, aku cinta pada-Mu'");
+    		  title.setText(textList.praying);
+    		  description.setText(textList.praying_desc);
     		  berdoa_countDownTimer.start();
     		  counter--;
     	  }
     	  else if (counter == 6)
     	  {
     		  r.play();
-    		  title.setText("Doa Baca");
-    		  description.setText("Dengan roh mendoakan 1-2 ayat. Mengubah ayat2 itu menjadi doa pribadi kita.");
+    		  title.setText(textList.pray_reading);
+    		  description.setText(textList.pray_reading_desc);
     		  doabaca_countDownTimer.start();
     		  counter--;
     	  }
     	  else if (counter == 5)
     	  {
     		  r.play();
-    		  title.setText("Mengaku Dosa");
-    		  description.setText("Mengakui dosa2 & pelanggaran2  kita.  Mohon pengampunan & pembasuhan.");
+    		  title.setText(textList.confession);
+    		  description.setText(textList.confession_desc);
     		  mengakuDosa_countDownTimer.start();
     		  counter--;
     	  }
     	  else if (counter == 4)
     	  {
     		  r.play();
-    		  title.setText("Konsikrasi");
-    		  description.setText("Mempersembahkan diri kepada Tuhan dengan segar.");
+    		  title.setText(textList.consecration);
+    		  description.setText(textList.consecration_desc);
     		  konsikrasi_countDownTimer.start();
     		  counter--;
     	  }
     	  else if (counter == 3)
     	  {
     		  r.play();
-    		  title.setText("Mengucap Syukur");
-    		  description.setText("Mengucap syukur atas segala sesuatu dan memuji Dia.");
+    		  title.setText(textList.thanksgiving);
+    		  description.setText(textList.thanksgiving_desc);
     		  ucapSyukur_countDownTimer.start();
     		  counter--;
     	  }
     	  else if (counter == 2)
     	  {
     		  r.play();
-    		  title.setText("Doa Permohonan");
-    		  description.setText("Meminta kepada Tuhan untuk keperluan2  kita, pertumbuhan, orang2 yang perlu keselamatan.");
+    		  title.setText(textList.petition);
+    		  description.setText(textList.petition_desc);
     		  doaPermohonan_countDownTimer.start();
     		  counter--;
     	  }
@@ -188,10 +188,10 @@ public class MainActivity extends Activity implements OnClickListener {
     	  {
     		  exitButton.setVisibility(View.VISIBLE);
     		  r.play();
-    		  title.setText("Selesai");
+    		  title.setText(textList.the_end);
     		  description.setText("");
-    		  text.setText("Haleluya!");
-    	      startB.setText("Ulangi");
+    		  text.setText(textList.halelujah);
+    	      startB.setText(textList.reset);
     	      timerHasStarted = false;
     	  }
       }
@@ -219,9 +219,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			counter = 7;
 		       menyeru_countDownTimer.start();
 		       timerHasStarted = true;
-		       startB.setText("Berhenti");
-		       title.setText("Menyeru Nama Tuhan");
-		       description.setText("Berseru kepada nama Tuhan untuk mengarahkan pikiran kita kepada roh");
+		       startB.setText(textList.stop);
+		       title.setText(textList.calling);
+		       description.setText(textList.calling_desc);
 		      } else {
 		    	  //Stop All Activated timer
 		       menyeru_countDownTimer.cancel();
@@ -233,7 +233,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		       doaPermohonan_countDownTimer.cancel();
 		       
 		       timerHasStarted = false;
-		       startB.setText("Ulangi");
+		       startB.setText(textList.reset);
 		       exitButton.setVisibility(View.VISIBLE);
 		       startB.setVisibility(View.VISIBLE);
 		      }
@@ -243,6 +243,32 @@ public class MainActivity extends Activity implements OnClickListener {
 	{
 		finish();          
         moveTaskToBack(true);
+	}
+	
+	public void textListInit()
+	{
+		textList = new TextList();
+		textList.start = getResources().getString(R.string.start);
+		textList.title = getResources().getString(R.string.title);
+		textList.exit = getResources().getString(R.string.exit);
+		textList.calling = getResources().getString(R.string.calling);
+		textList.calling_desc = getResources().getString(R.string.calling_desc);
+		textList.praying = getResources().getString(R.string.praying);
+		textList.praying_desc = getResources().getString(R.string.praying_desc);
+		textList.pray_reading = getResources().getString(R.string.pray_reading);
+		textList.pray_reading_desc = getResources().getString(R.string.pray_reading_desc);
+		textList.confession = getResources().getString(R.string.confession);
+		textList.confession_desc = getResources().getString(R.string.confession_desc);
+		textList.consecration = getResources().getString(R.string.consecration);
+		textList.consecration_desc = getResources().getString(R.string.consecration_desc);
+		textList.thanksgiving = getResources().getString(R.string.thanksgiving);
+		textList.thanksgiving_desc = getResources().getString(R.string.thanksgiving_desc);
+		textList.petition = getResources().getString(R.string.petition);
+		textList.petition_desc = getResources().getString(R.string.petition_desc);
+		textList.the_end = getResources().getString(R.string.the_end);
+		textList.halelujah = getResources().getString(R.string.halelujah);
+		textList.reset = getResources().getString(R.string.reset);
+		textList.stop = getResources().getString(R.string.stop);
 	}
     
 }

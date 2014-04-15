@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">7MinutesWithTheLord</string>
+    <string name="app_name">7 Minutes With The Lord</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="start">Start</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">Exit</string>
+    
+    <string name="calling">Calling on the Name of the Lord</string>
+    <string name="calling_desc">Calling on the Name of the Lord to set our mind on the spirit &#8211; 1 Cor.12:3; Rom. 8:6; 10:12&#8211;13</string>
+    
+    <string name="praying">Praying</string>
+    <string name="praying_desc">Opening our heart, softening our heart and emptying ourselves. Telling Him that we love Him &#8211; 2 Cor. 3:16; Psa. 62:8</string>
+    
+    <string name="pray_reading">Pray-reading</string>
+    <string name="pray_reading_desc">Using our exercised spirit to pray over a verse or two. Turning the verses into a personal prayer &#8211; Eph. 6:17_18; 2 Tim. 3:16</string>
+    
+    <string name="confession">Confession</string>
+    <string name="confession_desc">Confessing the sins and offenses on our conscience and removing all blockages to fellowship. Asking for forgiveness and cleansing &#8211; 1 John 1:7, 9; Psa. 66:18; Isa. 59:1&#8211;2</string>
+    
+    <string name="consecration">Consecration</string>
+    <string name="consecration_desc">Presenting ourselves to the Lord afresh, giving Him the full ground in us &#8211; Rom. 12:1&#8211;2; 6:13,19; Mark 12:30</string>
+    
+    <string name="thanksgiving">Thanksgiving</string>
+    <string name="thanksgiving_desc">Giving thanks for all things; for all the persons, situations and things in your life and praising Him &#8211; Eph. 5:20; 1 Thes. 5:18</string>
+    
+    <string name="petition">Petition</string>
+    <string name="petition_desc">Asking the Lord for needs, growth and persons that need salvation &#8211; 1 Tim. 2:1: Eph. 6:18; Matt. 7:7; Psa. 143:8</string>
 
+    <string name="the_end">End</string>
+    <string name="halelujah">Halelujah</string>
+    <string name="reset">Restart</string>
+    <string name="stop">Stop</string>
+    
 </resources>

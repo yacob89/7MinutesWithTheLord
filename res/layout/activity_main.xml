@@ -18,7 +18,7 @@
         android:textColor="#000000"
         android:background="@layout/custom_button"
         android:textSize="24sp"
-        android:text="Mulai" />
+        android:text="@string/start" />
 
     <TextView
         android:id="@+id/timer"
@@ -36,10 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:gravity="center"
         android:layout_marginTop="18dp"
         android:textSize="24sp"
         android:textColor="#66CCFF"
-        android:text="7 Menit Bersama Tuhan" />
+        android:text="@string/title" />
 
     <TextView
         android:id="@+id/textView2"
@@ -63,6 +64,6 @@
         android:onClick="exitApp"
         android:background="@layout/custom_button_2"
         android:textSize="24sp"
-        android:text="Keluar" />
+        android:text="@string/exit" />
 
 </RelativeLayout>
