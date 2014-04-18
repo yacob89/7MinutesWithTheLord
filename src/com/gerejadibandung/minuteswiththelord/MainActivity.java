@@ -8,7 +8,14 @@
 
 package com.gerejadibandung.minuteswiththelord;
 
+import java.util.Locale;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -66,6 +73,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	 //private final long doaPermohonan_startTime = 5 * 1000;
 	 // 
 	 private int counter;
+	 private Locale myLocale;
+	 private AlertDialog alertDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +123,47 @@ public class MainActivity extends Activity implements OnClickListener {
         // Hid Keluar Button
         exitButton.setVisibility(View.GONE);
         startB.setVisibility(View.VISIBLE);
+        
+        //Check Fist Install
+        boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
+        if (firstrun){
+        	alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Select your language");
+            alertDialog.setMessage("Pilih Bahasa Anda");
+            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "English (US)", new DialogInterface.OnClickListener() {
+
+              public void onClick(DialogInterface dialog, int id) {
+            	  changeLang("en");
+            	  setEnglishLocale();
+            	  Intent intent = getIntent();
+            	  finish();
+            	  startActivity(intent);
+            } }); 
+
+            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Bahasa Indonesia", new DialogInterface.OnClickListener() {
+
+              public void onClick(DialogInterface dialog, int id) {
+            	  changeLang("in");
+            	  setIndonesianLocale();
+            	  Intent intent = getIntent();
+            	  finish();
+            	  startActivity(intent);
+            }}); 
+
+            /*alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Bahasa Mandarin", new DialogInterface.OnClickListener() {
+
+              public void onClick(DialogInterface dialog, int id) {
+            	  // Set Bahasa Mandarin
+            }});*/
+            
+            alertDialog.show();
+        	
+        // Save the state
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+            .edit()
+            .putBoolean("firstrun", false)
+            .commit();
+        }
     }
 
 
@@ -270,5 +320,54 @@ public class MainActivity extends Activity implements OnClickListener {
 		textList.reset = getResources().getString(R.string.reset);
 		textList.stop = getResources().getString(R.string.stop);
 	}
-    
+	
+	public void setIndonesianLocale()
+	{
+		Locale locale = new Locale("in");
+		Locale.setDefault(locale);
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config,
+		      getBaseContext().getResources().getDisplayMetrics());
+	}
+	
+	public void setEnglishLocale()
+	{
+		Locale locale = new Locale("en");
+		Locale.setDefault(locale);
+		Configuration config = new Configuration();
+		config.locale = locale;
+		getBaseContext().getResources().updateConfiguration(config,
+		      getBaseContext().getResources().getDisplayMetrics());
+	}
+	
+	public void saveLocale(String lang)
+	{
+	    String langPref = "Language";
+	    SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+	    SharedPreferences.Editor editor = prefs.edit();
+	    editor.putString(langPref, lang);
+	    editor.commit();
+	}
+	
+
+	public void loadLocale()
+	{
+	    String langPref = "Language";
+	    SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+	    String language = prefs.getString(langPref, "");
+	    changeLang(language);
+	}
+	
+	public void changeLang(String lang)
+	{
+	    if (lang.equalsIgnoreCase(""))
+	     return;
+	    myLocale = new Locale(lang);
+	    saveLocale(lang);
+	    Locale.setDefault(myLocale);
+	    android.content.res.Configuration config = new android.content.res.Configuration();
+	    config.locale = myLocale;
+	    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+	}
 }
