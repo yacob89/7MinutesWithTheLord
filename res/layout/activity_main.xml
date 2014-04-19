@@ -76,22 +76,26 @@
         android:onClick="pauseTimer"
         android:text="Pause" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonBackward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:onClick="backwardTimer"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/ic_action_rewind"
         android:text="@string/backward" />
 
-    <Button
+    <ImageButton
         android:id="@+id/buttonForward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:onClick="forwardTimer"
+        android:contentDescription="@string/desc"
+        android:src="@drawable/ic_action_fast_forward"
         android:text="@string/forward" />
 
 </RelativeLayout>

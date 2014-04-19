@@ -35,4 +35,10 @@
     <string name="reset">Ulangi</string>
     <string name="stop">Berhenti</string>
     
+    <string name="forward"> Maju </string>
+    <string name="backward"> Kembali </string>
+    <string name="pause"> Stop </string>
+    
+    <string name="desc"> desc </string>
+    
 </resources>

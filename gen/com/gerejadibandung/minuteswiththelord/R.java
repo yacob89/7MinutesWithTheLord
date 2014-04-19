@@ -21,13 +21,15 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int ic_action_fast_forward=0x7f020000;
+        public static final int ic_action_rewind=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
         public static final int action_settings=0x7f090008;
         public static final int button=0x7f090000;
-        public static final int buttonBackward=0x7f090007;
-        public static final int buttonForward=0x7f090006;
+        public static final int buttonBackward=0x7f090006;
+        public static final int buttonForward=0x7f090007;
         public static final int buttonPause=0x7f090005;
         public static final int exitButton=0x7f090004;
         public static final int textView1=0x7f090002;
@@ -55,10 +57,12 @@ public final class R {
         public static final int confession_desc=0x7f06000d;
         public static final int consecration=0x7f06000e;
         public static final int consecration_desc=0x7f06000f;
+        public static final int desc=0x7f06001b;
         public static final int exit=0x7f060005;
         public static final int forward=0x7f060018;
         public static final int halelujah=0x7f060015;
         public static final int hello_world=0x7f060002;
+        public static final int pause=0x7f06001a;
         public static final int petition=0x7f060012;
         public static final int petition_desc=0x7f060013;
         public static final int pray_reading=0x7f06000a;

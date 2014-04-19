@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -36,8 +37,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button startB;
 	 private Button exitButton;
 	 private Button pauseButton;
-	 private Button forwardButton;
-	 private Button backwardButton;
+	 private ImageButton forwardButton;
+	 private ImageButton backwardButton;
 	 public TextView text;
 	 public TextView title;
 	 public TextView description;
@@ -92,8 +93,8 @@ public class MainActivity extends Activity implements OnClickListener {
         startB = (Button) this.findViewById(R.id.button);
         exitButton = (Button) this.findViewById(R.id.exitButton);
         pauseButton = (Button) this.findViewById(R.id.buttonPause);
-        forwardButton = (Button) this.findViewById(R.id.buttonForward);
-        backwardButton = (Button) this.findViewById(R.id.buttonBackward);
+        forwardButton = (ImageButton) this.findViewById(R.id.buttonForward);
+        backwardButton = (ImageButton) this.findViewById(R.id.buttonBackward);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
