@@ -118,12 +118,13 @@ public class MainActivity extends Activity implements OnClickListener {
         r = RingtoneManager.getRingtone(getApplicationContext(), path);
         
         // Set custom roboto fonts
-        Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
+        Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
         startB.setTypeface(mFont);
         exitButton.setTypeface(mFont);
         text.setTypeface(mFont);
         title.setTypeface(mFont);
         description.setTypeface(mFont);
+        pauseButton.setTypeface(mFont);
         
         // Keep The screen on during activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -184,6 +185,7 @@ public class MainActivity extends Activity implements OnClickListener {
         
         textListInit(); //Strings initialization
         title.setText(textList.title);
+        exitButton.setText(textList.exit);
     }
 
 
@@ -298,6 +300,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		       pauseButton.setVisibility(View.VISIBLE);
 		       exitButton.setVisibility(View.GONE);
 		       startB.setVisibility(View.GONE);
+		       pauseButton.setText(textList.pause);
 		} else {
 		    	  //Stop All Activated timer
 		       menyeru_countDownTimer.cancel();
@@ -340,12 +343,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		    }
 		    
 		    timerHasStarted = false;
+		    pauseButton.setText(textList.unpause);
 		}
 		else
 		{
 			continueTimer = new MyCountDownTimer(currentProgress * 1000, interval);
 			continueTimer.start();
 			timerHasStarted = true;
+			pauseButton.setText(textList.pause);
 		}
 	}
 	
@@ -423,7 +428,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	  	    exitButton.setVisibility(View.VISIBLE);
 	  	    pauseButton.setVisibility(View.GONE);
 		}
-		
+		pauseButton.setText(textList.unpause);
 	}
 	
 	public void backwardTimer(View v)
@@ -507,6 +512,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	  	    exitButton.setVisibility(View.VISIBLE);
 	  	    pauseButton.setVisibility(View.GONE);
 		}
+		pauseButton.setText(textList.unpause);
 	}
 	
 	public void textListInit()
@@ -533,6 +539,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		textList.halelujah = getResources().getString(R.string.halelujah);
 		textList.reset = getResources().getString(R.string.reset);
 		textList.stop = getResources().getString(R.string.stop);
+		textList.pause = getResources().getString(R.string.pause);
+		textList.unpause = getResources().getString(R.string.unpause);
 	}
 	
 	public void setIndonesianLocale()

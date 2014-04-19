@@ -58,9 +58,8 @@
         android:id="@+id/exitButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button"
-        android:layout_alignLeft="@+id/button"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="75dp"
+        android:layout_alignParentBottom="true"
         android:onClick="exitApp"
         android:background="@layout/custom_button_2"
         android:textSize="24sp"
@@ -69,12 +68,13 @@
     <Button
         android:id="@+id/buttonPause"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:onClick="pauseTimer"
-        android:text="Pause" />
+        android:textColor="#66CCFF"
+        android:text="@string/pause" />
 
     <ImageButton
         android:id="@+id/buttonBackward"

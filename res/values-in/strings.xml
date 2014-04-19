@@ -16,7 +16,7 @@
     <string name="praying_desc">Membuka hati kita, melembutkan hati kita, mengosongkan diri kita. "Tuhan, aku cinta pada-Mu"</string>
     
     <string name="pray_reading">Doa Baca</string>
-    <string name="pray_reading_desc">Dengan roh mendoakan 1_2 ayat. Mengubah ayat2 itu menjadi doa pribadi kita.</string>
+    <string name="pray_reading_desc">Dengan roh mendoakan 1 &#8211; 2 ayat. Mengubah ayat2 itu menjadi doa pribadi kita.</string>
     
     <string name="confession">Mengaku Dosa</string>
     <string name="confession_desc">Mengakui dosa2 dan pelanggaran2  kita.  Mohon pengampunan dan pembasuhan."</string>
@@ -37,7 +37,8 @@
     
     <string name="forward"> Maju </string>
     <string name="backward"> Kembali </string>
-    <string name="pause"> Stop </string>
+    <string name="pause"> Pause </string>
+    <string name="unpause"> Lanjutkan </string>
     
     <string name="desc"> desc </string>
     

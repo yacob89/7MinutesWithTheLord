@@ -1,5 +1,9 @@
 package com.gerejadibandung.minuteswiththelord;
 
+/**
+ * @author yacob
+ *
+ */
 public class TextList {
 
 	public String start;
@@ -23,6 +27,8 @@ public class TextList {
 	public String halelujah;
 	public String reset;
 	public String stop;
+	public String pause;
+	public String unpause;
 	
 	public String getStart() {
 		return start;
@@ -150,7 +156,17 @@ public class TextList {
 	public void setStop(String stop) {
 		this.stop = stop;
 	}
-	
-	
+	public String getPause() {
+		return pause;
+	}
+	public void setPause(String pause) {
+		this.pause = pause;
+	}
+	public String getUnpause() {
+		return unpause;
+	}
+	public void setUnpause(String unpause) {
+		this.unpause = unpause;
+	}
 	
 }

@@ -57,7 +57,7 @@ public final class R {
         public static final int confession_desc=0x7f06000d;
         public static final int consecration=0x7f06000e;
         public static final int consecration_desc=0x7f06000f;
-        public static final int desc=0x7f06001b;
+        public static final int desc=0x7f06001c;
         public static final int exit=0x7f060005;
         public static final int forward=0x7f060018;
         public static final int halelujah=0x7f060015;
@@ -76,6 +76,7 @@ public final class R {
         public static final int thanksgiving_desc=0x7f060011;
         public static final int the_end=0x7f060014;
         public static final int title=0x7f060004;
+        public static final int unpause=0x7f06001b;
     }
     public static final class style {
         /** 

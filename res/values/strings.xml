@@ -38,6 +38,7 @@
     <string name="forward"> Forward </string>
     <string name="backward"> Backward </string>
     <string name="pause"> Pause </string>
+    <string name="unpause"> Continue </string>
     
     <string name="desc"> desc </string>
     
