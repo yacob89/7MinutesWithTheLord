@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">7 Menit Bersama Tuhan</string>
+    <string name="app_name">7 Minutes With The Lord</string>
     <string name="action_settings">Pengaturan</string>
     <string name="hello_world">Hello world!</string>
     
-    <string name="start">Mulai</string>
-    <string name="title">7 Menit Bersama Tuhan</string>
-    <string name="exit">Keluar</string>
+    <string name="start">START</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">EXIT</string>
     
     <string name="calling">Menyeru Nama Tuhan</string>
     <string name="calling_desc">Berseru kepada nama Tuhan untuk mengarahkan pikiran kita kepada roh &#8211; 1 Korintus 12:3; Roma 8:6; 10:12&#8211;13</string>
@@ -32,13 +32,13 @@
 
     <string name="the_end">Selesai</string>
     <string name="halelujah">Haleluya</string>
-    <string name="reset">Ulangi</string>
-    <string name="stop">Berhenti</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
     
     <string name="forward"> Maju </string>
     <string name="backward"> Kembali </string>
-    <string name="pause"> Pause </string>
-    <string name="unpause"> Lanjutkan </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
     
     <string name="desc"> desc </string>
     

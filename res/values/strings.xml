@@ -5,9 +5,9 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     
-    <string name="start">Start</string>
+    <string name="start">START</string>
     <string name="title">7 Minutes With The Lord</string>
-    <string name="exit">Exit</string>
+    <string name="exit">EXIT</string>
     
     <string name="calling">Calling on the Name of the Lord</string>
     <string name="calling_desc">Calling on the Name of the Lord to set our mind on the spirit &#8211; 1 Cor.12:3; Rom. 8:6; 10:12&#8211;13</string>
@@ -31,14 +31,14 @@
     <string name="petition_desc">Asking the Lord for needs, growth and persons that need salvation &#8211; 1 Tim. 2:1: Eph. 6:18; Matt. 7:7; Psa. 143:8</string>
 
     <string name="the_end">End</string>
-    <string name="halelujah">Halelujah</string>
-    <string name="reset">Restart</string>
-    <string name="stop">Stop</string>
+    <string name="halelujah">Hallelujah</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
     
     <string name="forward"> Forward </string>
     <string name="backward"> Backward </string>
-    <string name="pause"> Pause </string>
-    <string name="unpause"> Continue </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
     
     <string name="desc"> desc </string>
     

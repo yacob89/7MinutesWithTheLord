@@ -119,10 +119,11 @@ public class MainActivity extends Activity implements OnClickListener {
         
         // Set custom roboto fonts
         Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
+        Typeface boldFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
         startB.setTypeface(mFont);
         exitButton.setTypeface(mFont);
         text.setTypeface(mFont);
-        title.setTypeface(mFont);
+        title.setTypeface(boldFont);
         description.setTypeface(mFont);
         pauseButton.setTypeface(mFont);
         
@@ -141,9 +142,9 @@ public class MainActivity extends Activity implements OnClickListener {
         //Check Fist Install
         boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
         if (firstrun){
-        	alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle("Select your language");
-            alertDialog.setMessage("Pilih Bahasa Anda");
+        	/*alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("");
+            alertDialog.setMessage("");
             alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "English (US)", new DialogInterface.OnClickListener() {
 
               public void onClick(DialogInterface dialog, int id) {
@@ -163,14 +164,64 @@ public class MainActivity extends Activity implements OnClickListener {
             	  finish();
             	  startActivity(intent);
             }}); 
-
-            /*alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Bahasa Mandarin", new DialogInterface.OnClickListener() {
-
-              public void onClick(DialogInterface dialog, int id) {
-            	  // Set Bahasa Mandarin
-            }});*/
             
-            alertDialog.show();
+            alertDialog.show();*/
+        	
+        	/*final CharSequence[] gender = {"English (US)","Bahasa Indonesia"};
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setTitle("");
+            alert.setSingleChoiceItems(gender,-1, new DialogInterface.OnClickListener()
+            {
+                @Override
+                public void onClick(DialogInterface dialog, int which) 
+                {
+                    if(gender[which]=="English (US)")
+                    {
+                    	changeLang("en");
+                  	  setEnglishLocale();
+                  	  Intent intent = getIntent();
+                  	  finish();
+                  	  startActivity(intent);
+                    }
+                    else if (gender[which]=="Bahasa Indonesia")
+                    {
+                    	changeLang("in");
+                  	  setIndonesianLocale();
+                  	  Intent intent = getIntent();
+                  	  finish();
+                  	  startActivity(intent);
+                    }
+                }
+            });
+            alert.show();*/
+            
+            /////////////////
+        	final CharSequence[] gender = {"English (US)","Bahasa Indonesia"};
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("")
+                   .setItems(gender, new DialogInterface.OnClickListener() {
+                       public void onClick(DialogInterface dialog, int which) {
+                       // The 'which' argument contains the index position
+                       // of the selected item
+                    	   if(gender[which]=="English (US)")
+                           {
+                           	changeLang("en");
+                         	  setEnglishLocale();
+                         	  Intent intent = getIntent();
+                         	  finish();
+                         	  startActivity(intent);
+                           }
+                           else if (gender[which]=="Bahasa Indonesia")
+                           {
+                           	changeLang("in");
+                         	  setIndonesianLocale();
+                         	  Intent intent = getIntent();
+                         	  finish();
+                         	  startActivity(intent);
+                           }
+                   }
+            });
+            builder.show();
         	
         // Save the state
         getSharedPreferences("PREFERENCE", MODE_PRIVATE)
@@ -193,6 +244,29 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+		menyeru_countDownTimer.cancel();
+	    berdoa_countDownTimer.cancel();
+	    doabaca_countDownTimer.cancel();
+	    mengakuDosa_countDownTimer.cancel();
+	    konsikrasi_countDownTimer.cancel();
+	    ucapSyukur_countDownTimer.cancel();
+	    doaPermohonan_countDownTimer.cancel();
+	    if (continueTimer != null)
+	    {
+	    	continueTimer.cancel();
+	    }
+	    
+	    timerHasStarted = false;
+	    pauseButton.setText(textList.unpause);
+	}
+    
+    
+
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
 	}
 
 
@@ -260,6 +334,9 @@ public class MainActivity extends Activity implements OnClickListener {
     	  {
     		  exitButton.setVisibility(View.VISIBLE);
     		  pauseButton.setVisibility(View.GONE);
+    		  startB.setVisibility(View.VISIBLE);
+  	  	    forwardButton.setVisibility(View.GONE);
+  	  	    backwardButton.setVisibility(View.GONE);
     		  r.play();
     		  title.setText(textList.the_end);
     		  description.setText("");
@@ -376,6 +453,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		timerHasStarted = false;
 		pauseButton.setVisibility(View.VISIBLE);
 		exitButton.setVisibility(View.GONE);
+		forwardButton.setVisibility(View.VISIBLE);
+  	    backwardButton.setVisibility(View.VISIBLE);
 		
 		if (counter == 6)
 		{
@@ -427,6 +506,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	  	    startB.setText(textList.reset);
 	  	    exitButton.setVisibility(View.VISIBLE);
 	  	    pauseButton.setVisibility(View.GONE);
+	  	    startB.setVisibility(View.VISIBLE);
+	  	    forwardButton.setVisibility(View.GONE);
+	  	    backwardButton.setVisibility(View.GONE);
 		}
 		pauseButton.setText(textList.unpause);
 	}
@@ -452,6 +534,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		timerHasStarted = false;
 		pauseButton.setVisibility(View.VISIBLE);
+		forwardButton.setVisibility(View.VISIBLE);
+  	    backwardButton.setVisibility(View.VISIBLE);
 		exitButton.setVisibility(View.GONE);
 		
 		if (counter == 7)
@@ -511,6 +595,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	  	    startB.setText(textList.reset);
 	  	    exitButton.setVisibility(View.VISIBLE);
 	  	    pauseButton.setVisibility(View.GONE);
+	  	    startB.setVisibility(View.VISIBLE);
+	  	    forwardButton.setVisibility(View.GONE);
+	  	    backwardButton.setVisibility(View.GONE);
 		}
 		pauseButton.setText(textList.unpause);
 	}
