@@ -142,60 +142,6 @@ public class MainActivity extends Activity implements OnClickListener {
         //Check Fist Install
         boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
         if (firstrun){
-        	/*alertDialog = new AlertDialog.Builder(this).create();
-            alertDialog.setTitle("");
-            alertDialog.setMessage("");
-            alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "English (US)", new DialogInterface.OnClickListener() {
-
-              public void onClick(DialogInterface dialog, int id) {
-            	  changeLang("en");
-            	  setEnglishLocale();
-            	  Intent intent = getIntent();
-            	  finish();
-            	  startActivity(intent);
-            } }); 
-
-            alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Bahasa Indonesia", new DialogInterface.OnClickListener() {
-
-              public void onClick(DialogInterface dialog, int id) {
-            	  changeLang("in");
-            	  setIndonesianLocale();
-            	  Intent intent = getIntent();
-            	  finish();
-            	  startActivity(intent);
-            }}); 
-            
-            alertDialog.show();*/
-        	
-        	/*final CharSequence[] gender = {"English (US)","Bahasa Indonesia"};
-            AlertDialog.Builder alert = new AlertDialog.Builder(this);
-            alert.setTitle("");
-            alert.setSingleChoiceItems(gender,-1, new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which) 
-                {
-                    if(gender[which]=="English (US)")
-                    {
-                    	changeLang("en");
-                  	  setEnglishLocale();
-                  	  Intent intent = getIntent();
-                  	  finish();
-                  	  startActivity(intent);
-                    }
-                    else if (gender[which]=="Bahasa Indonesia")
-                    {
-                    	changeLang("in");
-                  	  setIndonesianLocale();
-                  	  Intent intent = getIntent();
-                  	  finish();
-                  	  startActivity(intent);
-                    }
-                }
-            });
-            alert.show();*/
-            
-            /////////////////
         	final CharSequence[] gender = {"English (US)","Bahasa Indonesia"};
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("")
