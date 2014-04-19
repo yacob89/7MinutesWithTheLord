@@ -35,4 +35,7 @@
     <string name="reset">Restart</string>
     <string name="stop">Stop</string>
     
+    <string name="forward"> forward </string>
+    <string name="backward"> backward </string>
+    
 </resources>

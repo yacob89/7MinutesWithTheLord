@@ -66,4 +66,32 @@
         android:textSize="24sp"
         android:text="@string/exit" />
 
+    <Button
+        android:id="@+id/buttonPause"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="pauseTimer"
+        android:text="Pause" />
+
+    <Button
+        android:id="@+id/buttonBackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="backwardTimer"
+        android:text="@string/backward" />
+
+    <Button
+        android:id="@+id/buttonForward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="forwardTimer"
+        android:text="@string/forward" />
+
 </RelativeLayout>

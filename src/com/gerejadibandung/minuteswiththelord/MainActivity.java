@@ -35,6 +35,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private boolean timerHasStarted = false;
 	 private Button startB;
 	 private Button exitButton;
+	 private Button pauseButton;
+	 private Button forwardButton;
+	 private Button backwardButton;
 	 public TextView text;
 	 public TextView title;
 	 public TextView description;
@@ -72,19 +75,25 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private final long doaPermohonan_startTime = 60 * 1000;
 	 //private final long doaPermohonan_startTime = 5 * 1000;
 	 // 
+	 private CountDownTimer continueTimer;
+	 
 	 private int counter;
 	 private Locale myLocale;
 	 private AlertDialog alertDialog;
+	 
+	 private int currentProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        textListInit(); //Strings initialization
         // UI Initialization
         startB = (Button) this.findViewById(R.id.button);
         exitButton = (Button) this.findViewById(R.id.exitButton);
+        pauseButton = (Button) this.findViewById(R.id.buttonPause);
+        forwardButton = (Button) this.findViewById(R.id.buttonForward);
+        backwardButton = (Button) this.findViewById(R.id.buttonBackward);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -123,6 +132,9 @@ public class MainActivity extends Activity implements OnClickListener {
         // Hid Keluar Button
         exitButton.setVisibility(View.GONE);
         startB.setVisibility(View.VISIBLE);
+        forwardButton.setVisibility(View.GONE);
+        backwardButton.setVisibility(View.GONE);
+        pauseButton.setVisibility(View.GONE);
         
         //Check Fist Install
         boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
@@ -164,6 +176,13 @@ public class MainActivity extends Activity implements OnClickListener {
             .putBoolean("firstrun", false)
             .commit();
         }
+        else
+        {
+        	loadLocale();
+        }
+        
+        textListInit(); //Strings initialization
+        title.setText(textList.title);
     }
 
 
@@ -237,6 +256,7 @@ public class MainActivity extends Activity implements OnClickListener {
     	  else if (counter == 1)
     	  {
     		  exitButton.setVisibility(View.VISIBLE);
+    		  pauseButton.setVisibility(View.GONE);
     		  r.play();
     		  title.setText(textList.the_end);
     		  description.setText("");
@@ -272,7 +292,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		       startB.setText(textList.stop);
 		       title.setText(textList.calling);
 		       description.setText(textList.calling_desc);
-		      } else {
+		       forwardButton.setVisibility(View.VISIBLE);
+		       backwardButton.setVisibility(View.VISIBLE);
+		       pauseButton.setVisibility(View.VISIBLE);
+		       exitButton.setVisibility(View.GONE);
+		       startB.setVisibility(View.GONE);
+		} else {
 		    	  //Stop All Activated timer
 		       menyeru_countDownTimer.cancel();
 		       berdoa_countDownTimer.cancel();
@@ -283,16 +308,204 @@ public class MainActivity extends Activity implements OnClickListener {
 		       doaPermohonan_countDownTimer.cancel();
 		       
 		       timerHasStarted = false;
-		       startB.setText(textList.reset);
+		       startB.setText(textList.start);
 		       exitButton.setVisibility(View.VISIBLE);
 		       startB.setVisibility(View.VISIBLE);
-		      }
+		}
 	}
 	
 	public void exitApp(View v)
 	{
 		finish();          
         moveTaskToBack(true);
+	}
+	
+	public void pauseTimer(View v)
+	{
+		currentProgress = Integer.parseInt(text.getText().toString());
+		
+		if(timerHasStarted)
+		{
+			menyeru_countDownTimer.cancel();
+		    berdoa_countDownTimer.cancel();
+		    doabaca_countDownTimer.cancel();
+		    mengakuDosa_countDownTimer.cancel();
+		    konsikrasi_countDownTimer.cancel();
+		    ucapSyukur_countDownTimer.cancel();
+		    doaPermohonan_countDownTimer.cancel();
+		    if (continueTimer != null)
+		    {
+		    	continueTimer.cancel();
+		    }
+		    
+		    timerHasStarted = false;
+		}
+		else
+		{
+			continueTimer = new MyCountDownTimer(currentProgress * 1000, interval);
+			continueTimer.start();
+			timerHasStarted = true;
+		}
+	}
+	
+	public void forwardTimer(View v)
+	{
+		if (counter > 0)
+		{
+			counter--;
+		}
+		
+		menyeru_countDownTimer.cancel();
+	    berdoa_countDownTimer.cancel();
+	    doabaca_countDownTimer.cancel();
+	    mengakuDosa_countDownTimer.cancel();
+	    konsikrasi_countDownTimer.cancel();
+	    ucapSyukur_countDownTimer.cancel();
+	    doaPermohonan_countDownTimer.cancel();
+	    if (continueTimer != null)
+	    {
+	    	continueTimer.cancel();
+	    }
+		
+		timerHasStarted = false;
+		pauseButton.setVisibility(View.VISIBLE);
+		exitButton.setVisibility(View.GONE);
+		
+		if (counter == 6)
+		{
+			text.setText(String.valueOf(60));
+			title.setText(textList.praying);
+  		  	description.setText(textList.praying_desc);
+			continueTimer = new MyCountDownTimer(60 * 1000, interval);
+		}
+		else if (counter == 5)
+		{
+			text.setText(String.valueOf(150));
+			title.setText(textList.pray_reading);
+  		  	description.setText(textList.pray_reading_desc);
+			continueTimer = new MyCountDownTimer(150 * 1000, interval);
+		}
+		else if (counter == 4)
+		{
+			text.setText(String.valueOf(60));
+			title.setText(textList.confession);
+  		  	description.setText(textList.confession_desc);
+			continueTimer = new MyCountDownTimer(60 * 1000, interval);
+		}
+		else if (counter == 3)
+		{
+			text.setText(String.valueOf(30));
+			title.setText(textList.consecration);
+  		  	description.setText(textList.consecration_desc);
+			continueTimer = new MyCountDownTimer(30 * 1000, interval);
+		}
+		else if (counter == 2)
+		{
+			text.setText(String.valueOf(30));
+			title.setText(textList.thanksgiving);
+  		  	description.setText(textList.thanksgiving_desc);
+			continueTimer = new MyCountDownTimer(30 * 1000, interval);
+		}
+		else if (counter == 1)
+		{
+			text.setText(String.valueOf(60));
+			title.setText(textList.petition);
+  		  	description.setText(textList.petition_desc);
+			continueTimer = new MyCountDownTimer(60 * 1000, interval);
+		}
+		else if (counter == 0)
+		{
+			title.setText(textList.the_end);
+	  		description.setText("");
+	  		text.setText(textList.halelujah);
+	  	    startB.setText(textList.reset);
+	  	    exitButton.setVisibility(View.VISIBLE);
+	  	    pauseButton.setVisibility(View.GONE);
+		}
+		
+	}
+	
+	public void backwardTimer(View v)
+	{
+		if (counter < 7)
+		{
+			counter++;
+		}
+		
+		menyeru_countDownTimer.cancel();
+	    berdoa_countDownTimer.cancel();
+	    doabaca_countDownTimer.cancel();
+	    mengakuDosa_countDownTimer.cancel();
+	    konsikrasi_countDownTimer.cancel();
+	    ucapSyukur_countDownTimer.cancel();
+	    doaPermohonan_countDownTimer.cancel();
+	    if (continueTimer != null)
+	    {
+	    	continueTimer.cancel();
+	    }
+		
+		timerHasStarted = false;
+		pauseButton.setVisibility(View.VISIBLE);
+		exitButton.setVisibility(View.GONE);
+		
+		if (counter == 7)
+		{
+			text.setText(String.valueOf(30));
+			title.setText(textList.calling);
+  		  	description.setText(textList.calling_desc);
+			continueTimer = new MyCountDownTimer(30 * 1000, interval);
+		}
+		else if (counter == 6)
+		{
+			text.setText(String.valueOf(60));
+			title.setText(textList.praying);
+  		  	description.setText(textList.praying_desc);
+			continueTimer = new MyCountDownTimer(60 * 1000, interval);
+		}
+		else if (counter == 5)
+		{
+			text.setText(String.valueOf(150));
+			title.setText(textList.pray_reading);
+  		  	description.setText(textList.pray_reading_desc);
+			continueTimer = new MyCountDownTimer(150 * 1000, interval);
+		}
+		else if (counter == 4)
+		{
+			text.setText(String.valueOf(60));
+			title.setText(textList.confession);
+  		  	description.setText(textList.confession_desc);
+			continueTimer = new MyCountDownTimer(60 * 1000, interval);
+		}
+		else if (counter == 3)
+		{
+			text.setText(String.valueOf(30));
+			title.setText(textList.consecration);
+  		  	description.setText(textList.consecration_desc);
+			continueTimer = new MyCountDownTimer(30 * 1000, interval);
+		}
+		else if (counter == 2)
+		{
+			text.setText(String.valueOf(30));
+			title.setText(textList.thanksgiving);
+  		  	description.setText(textList.thanksgiving_desc);
+			continueTimer = new MyCountDownTimer(30 * 1000, interval);
+		}
+		else if (counter == 1)
+		{
+			text.setText(String.valueOf(60));
+			title.setText(textList.petition);
+  		  	description.setText(textList.petition_desc);
+			continueTimer = new MyCountDownTimer(60 * 1000, interval);
+		}
+		else if (counter == 0)
+		{
+			title.setText(textList.the_end);
+	  		description.setText("");
+	  		text.setText(textList.halelujah);
+	  	    startB.setText(textList.reset);
+	  	    exitButton.setVisibility(View.VISIBLE);
+	  	    pauseButton.setVisibility(View.GONE);
+		}
 	}
 	
 	public void textListInit()
