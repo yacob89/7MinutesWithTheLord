@@ -22,6 +22,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -214,6 +215,42 @@ public class MainActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onResume();
 	}
+	
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if (keyCode == KeyEvent.KEYCODE_BACK) {
+	        exitByBackKey();
+
+	        //moveTaskToBack(false);
+
+	        return true;
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
+
+	protected void exitByBackKey() {
+
+	    AlertDialog alertbox = new AlertDialog.Builder(this)
+	    .setMessage("Do you want to exit application?")
+	    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+	        // do something when the button is clicked
+	        public void onClick(DialogInterface arg0, int arg1) {
+
+	            finish();
+	            //close();
+
+
+	        }
+	    })
+	    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+
+	        // do something when the button is clicked
+	        public void onClick(DialogInterface arg0, int arg1) {
+	                       }
+	    })
+	      .show();
+
+	}
 
 
 	@Override
@@ -318,7 +355,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		       startB.setText(textList.stop);
 		       title.setText(textList.calling);
 		       description.setText(textList.calling_desc);
-		       forwardButton.setVisibility(View.VISIBLE);
+		       //forwardButton.setVisibility(View.VISIBLE);
 		       backwardButton.setVisibility(View.VISIBLE);
 		       pauseButton.setVisibility(View.VISIBLE);
 		       exitButton.setVisibility(View.GONE);
@@ -399,7 +436,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		timerHasStarted = false;
 		pauseButton.setVisibility(View.VISIBLE);
 		exitButton.setVisibility(View.GONE);
-		forwardButton.setVisibility(View.VISIBLE);
+		//forwardButton.setVisibility(View.VISIBLE);
   	    backwardButton.setVisibility(View.VISIBLE);
 		
 		if (counter == 6)
@@ -453,7 +490,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	  	    exitButton.setVisibility(View.VISIBLE);
 	  	    pauseButton.setVisibility(View.GONE);
 	  	    startB.setVisibility(View.VISIBLE);
-	  	    forwardButton.setVisibility(View.GONE);
+	  	    //forwardButton.setVisibility(View.GONE);
 	  	    backwardButton.setVisibility(View.GONE);
 		}
 		pauseButton.setText(textList.unpause);
@@ -480,7 +517,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		timerHasStarted = false;
 		pauseButton.setVisibility(View.VISIBLE);
-		forwardButton.setVisibility(View.VISIBLE);
+		//forwardButton.setVisibility(View.VISIBLE);
   	    backwardButton.setVisibility(View.VISIBLE);
 		exitButton.setVisibility(View.GONE);
 		
@@ -542,7 +579,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	  	    exitButton.setVisibility(View.VISIBLE);
 	  	    pauseButton.setVisibility(View.GONE);
 	  	    startB.setVisibility(View.VISIBLE);
-	  	    forwardButton.setVisibility(View.GONE);
+	  	    //forwardButton.setVisibility(View.GONE);
 	  	    backwardButton.setVisibility(View.GONE);
 		}
 		pauseButton.setText(textList.unpause);
