@@ -38,6 +38,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button startB;
 	 private Button exitButton;
 	 private Button pauseButton;
+	 private Button restartButton;
 	 private ImageButton forwardButton;
 	 private ImageButton backwardButton;
 	 public TextView text;
@@ -96,6 +97,7 @@ public class MainActivity extends Activity implements OnClickListener {
         pauseButton = (Button) this.findViewById(R.id.buttonPause);
         forwardButton = (ImageButton) this.findViewById(R.id.buttonForward);
         backwardButton = (ImageButton) this.findViewById(R.id.buttonBackward);
+        restartButton = (Button) this.findViewById(R.id.buttonRestart);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -139,6 +141,7 @@ public class MainActivity extends Activity implements OnClickListener {
         forwardButton.setVisibility(View.GONE);
         backwardButton.setVisibility(View.GONE);
         pauseButton.setVisibility(View.GONE);
+        restartButton.setVisibility(View.GONE);
         
         //Check Fist Install
         boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
@@ -191,7 +194,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		menyeru_countDownTimer.cancel();
+		pauseTime();
+	}
+    
+    public void pauseTime()
+    {
+    	menyeru_countDownTimer.cancel();
 	    berdoa_countDownTimer.cancel();
 	    doabaca_countDownTimer.cancel();
 	    mengakuDosa_countDownTimer.cancel();
@@ -205,9 +213,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	    
 	    timerHasStarted = false;
 	    pauseButton.setText(textList.unpause);
-	}
-    
-    
+    }
 
 
 	@Override
@@ -228,28 +234,68 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 	protected void exitByBackKey() {
+		
+		if (counter == 7)
+		{
+			showExitAlert(7);
+		}
+		else if (counter == 6)
+		{
+			showExitAlert(6.5);
+		}
+		else if (counter == 5)
+		{
+			showExitAlert(4);
+		}
+		else if (counter == 4)
+		{
+			showExitAlert(3);
+		}
+		else if (counter == 3)
+		{
+			showExitAlert(2.5);
+		}
+		else if (counter == 2)
+		{
+			showExitAlert(2);
+		}
+		else if (counter == 1)
+		{
+			showExitAlert(1);
+		}
+		else
+		{
+			finish();          
+	        moveTaskToBack(true);
+		}
 
-	    AlertDialog alertbox = new AlertDialog.Builder(this)
-	    .setMessage("Do you want to exit application?")
-	    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+	}
+	
+	public void showExitAlert(double menit)
+	{
+		pauseTime();
+		AlertDialog alertbox = new AlertDialog.Builder(this)
+	    .setMessage(textList.alert_message1+" ["+ menit + " " + textList.alert_message3+" " +textList.alert_message2)
+	    .setPositiveButton("RESUME", new DialogInterface.OnClickListener() {
 
 	        // do something when the button is clicked
 	        public void onClick(DialogInterface arg0, int arg1) {
-
-	            finish();
-	            //close();
-
-
+	        	currentProgress = Integer.parseInt(text.getText().toString());
+	        	continueTimer = new MyCountDownTimer(currentProgress * 1000, interval);
+				continueTimer.start();
+				timerHasStarted = true;
+				pauseButton.setText(textList.pause);
 	        }
 	    })
-	    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+	    .setNegativeButton("EXIT ANYWAY", new DialogInterface.OnClickListener() {
 
 	        // do something when the button is clicked
 	        public void onClick(DialogInterface arg0, int arg1) {
+	        	finish();
+	            //close();
 	                       }
 	    })
 	      .show();
-
 	}
 
 
@@ -317,15 +363,17 @@ public class MainActivity extends Activity implements OnClickListener {
     	  {
     		  exitButton.setVisibility(View.VISIBLE);
     		  pauseButton.setVisibility(View.GONE);
-    		  startB.setVisibility(View.VISIBLE);
+    		  startB.setVisibility(View.GONE);
   	  	    forwardButton.setVisibility(View.GONE);
   	  	    backwardButton.setVisibility(View.GONE);
+  	  	restartButton.setVisibility(View.VISIBLE);
     		  r.play();
     		  title.setText(textList.the_end);
     		  description.setText("");
     		  text.setText(textList.halelujah);
     	      startB.setText(textList.reset);
     	      timerHasStarted = false;
+    	      counter--;
     	  }
       }
     
@@ -358,8 +406,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		       //forwardButton.setVisibility(View.VISIBLE);
 		       backwardButton.setVisibility(View.VISIBLE);
 		       pauseButton.setVisibility(View.VISIBLE);
-		       exitButton.setVisibility(View.GONE);
+		       exitButton.setVisibility(View.VISIBLE);
 		       startB.setVisibility(View.GONE);
+		       restartButton.setVisibility(View.GONE);
 		       pauseButton.setText(textList.pause);
 		} else {
 		    	  //Stop All Activated timer
@@ -378,10 +427,63 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 	}
 	
+	public void restartActivity(View v)
+	{
+		if (!timerHasStarted) {
+			exitButton.setVisibility(View.GONE);
+			counter = 7;
+		       menyeru_countDownTimer.start();
+		       timerHasStarted = true;
+		       startB.setText(textList.stop);
+		       title.setText(textList.calling);
+		       description.setText(textList.calling_desc);
+		       //forwardButton.setVisibility(View.VISIBLE);
+		       backwardButton.setVisibility(View.VISIBLE);
+		       pauseButton.setVisibility(View.VISIBLE);
+		       exitButton.setVisibility(View.VISIBLE);
+		       startB.setVisibility(View.GONE);
+		       restartButton.setVisibility(View.GONE);
+		       pauseButton.setText(textList.pause);
+		}
+	}
+	
 	public void exitApp(View v)
 	{
-		finish();          
-        moveTaskToBack(true);
+		//finish();          
+        //moveTaskToBack(true);
+		if (counter == 7)
+		{
+			showExitAlert(7);
+		}
+		else if (counter == 6)
+		{
+			showExitAlert(6.5);
+		}
+		else if (counter == 5)
+		{
+			showExitAlert(4);
+		}
+		else if (counter == 4)
+		{
+			showExitAlert(3);
+		}
+		else if (counter == 3)
+		{
+			showExitAlert(2.5);
+		}
+		else if (counter == 2)
+		{
+			showExitAlert(2);
+		}
+		else if (counter == 1)
+		{
+			showExitAlert(1);
+		}
+		else
+		{
+			finish();          
+	        moveTaskToBack(true);
+		}
 	}
 	
 	public void pauseTimer(View v)
@@ -519,7 +621,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		pauseButton.setVisibility(View.VISIBLE);
 		//forwardButton.setVisibility(View.VISIBLE);
   	    backwardButton.setVisibility(View.VISIBLE);
-		exitButton.setVisibility(View.GONE);
+		exitButton.setVisibility(View.VISIBLE);
 		
 		if (counter == 7)
 		{
@@ -611,6 +713,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		textList.stop = getResources().getString(R.string.stop);
 		textList.pause = getResources().getString(R.string.pause);
 		textList.unpause = getResources().getString(R.string.unpause);
+		textList.alert_message1 = getResources().getString(R.string.alert_message1);
+		textList.alert_message2 = getResources().getString(R.string.alert_message2);
+		textList.alert_message3 = getResources().getString(R.string.alert_message3);
 	}
 	
 	public void setIndonesianLocale()

@@ -56,13 +56,13 @@
 
     <Button
         android:id="@+id/exitButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="75dp"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:onClick="exitApp"
         android:background="@layout/custom_button_2"
-        android:textSize="24sp"
+        android:textSize="14sp"
         android:text="@string/exit" />
 
     <Button
@@ -100,5 +100,17 @@
         android:src="@drawable/ic_action_fast_forward"
         android:background="@layout/bottom_button"
         android:text="@string/forward" />
+
+    <Button
+        android:id="@+id/buttonRestart"
+        android:layout_width="200dp"
+        android:layout_height="51dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@layout/custom_button"
+        android:onClick="restartActivity"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:text="RESTART" />
 
 </RelativeLayout>

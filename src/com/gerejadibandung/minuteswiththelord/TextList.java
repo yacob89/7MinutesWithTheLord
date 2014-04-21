@@ -29,6 +29,9 @@ public class TextList {
 	public String stop;
 	public String pause;
 	public String unpause;
+	public String alert_message1;
+	public String alert_message2;
+	public String alert_message3;
 	
 	public String getStart() {
 		return start;
@@ -168,5 +171,22 @@ public class TextList {
 	public void setUnpause(String unpause) {
 		this.unpause = unpause;
 	}
-	
+	public String getAlert_message1() {
+		return alert_message1;
+	}
+	public void setAlert_message1(String alert_message1) {
+		this.alert_message1 = alert_message1;
+	}
+	public String getAlert_message2() {
+		return alert_message2;
+	}
+	public void setAlert_message2(String alert_message2) {
+		this.alert_message2 = alert_message2;
+	}
+	public String getAlert_message3() {
+		return alert_message3;
+	}
+	public void setAlert_message3(String alert_message3) {
+		this.alert_message3 = alert_message3;
+	}
 }
