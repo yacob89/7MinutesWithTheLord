@@ -113,4 +113,28 @@
         android:textSize="24sp"
         android:text="RESTART" />
 
+    <Button
+        android:id="@+id/buttonEnglish"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="210dp"
+        android:background="@layout/custom_button"
+        android:textColor="#FFFFFF"
+        android:onClick="setEnglishLocale"
+        android:text="English (US)" />
+
+    <Button
+        android:id="@+id/buttonIndonesia"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:background="@layout/custom_button"
+        android:textColor="#FFFFFF"
+        android:onClick="setIndonesianLocale"
+        android:text="Bahasa Indonesia" />
+
 </RelativeLayout>

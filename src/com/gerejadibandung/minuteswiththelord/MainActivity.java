@@ -41,6 +41,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button exitButton;
 	 private Button pauseButton;
 	 private Button restartButton;
+	 private Button englishButton;
+	 private Button indonesiaButton;
 	 private ImageButton forwardButton;
 	 private ImageButton backwardButton;
 	 public TextView text;
@@ -100,6 +102,8 @@ public class MainActivity extends Activity implements OnClickListener {
         forwardButton = (ImageButton) this.findViewById(R.id.buttonForward);
         backwardButton = (ImageButton) this.findViewById(R.id.buttonBackward);
         restartButton = (Button) this.findViewById(R.id.buttonRestart);
+        englishButton = (Button) this.findViewById(R.id.buttonEnglish);
+        indonesiaButton = (Button) this.findViewById(R.id.buttonIndonesia);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -131,6 +135,8 @@ public class MainActivity extends Activity implements OnClickListener {
         title.setTypeface(boldFont);
         description.setTypeface(mFont);
         pauseButton.setTypeface(mFont);
+        englishButton.setTypeface(mFont);
+        indonesiaButton.setTypeface(mFont);
         
         // Keep The screen on during activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -139,12 +145,16 @@ public class MainActivity extends Activity implements OnClickListener {
         
         // Hid Keluar Button
         exitButton.setVisibility(View.GONE);
-        startB.setVisibility(View.VISIBLE);
+        startB.setVisibility(View.GONE);
         forwardButton.setVisibility(View.GONE);
         backwardButton.setVisibility(View.GONE);
         pauseButton.setVisibility(View.GONE);
         restartButton.setVisibility(View.GONE);
+        text.setVisibility(View.GONE);
+        englishButton.setVisibility(View.VISIBLE);
+        indonesiaButton.setVisibility(View.VISIBLE);
         
+        /*
         //Check Fist Install
         //boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
         //if (firstrun){
@@ -443,6 +453,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		       exitButton.setVisibility(View.VISIBLE);
 		       startB.setVisibility(View.GONE);
 		       restartButton.setVisibility(View.GONE);
+		       englishButton.setVisibility(View.GONE);
+		        indonesiaButton.setVisibility(View.GONE);
+		        text.setVisibility(View.VISIBLE);
 		       pauseButton.setText(textList.pause);
 		       r.play();
 		} else {
@@ -753,24 +766,50 @@ public class MainActivity extends Activity implements OnClickListener {
 		textList.alert_message3 = getResources().getString(R.string.alert_message3);
 	}
 	
-	public void setIndonesianLocale()
+	public void setIndonesianLocale(View v)
 	{
-		Locale locale = new Locale("in");
-		Locale.setDefault(locale);
-		Configuration config = new Configuration();
-		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config,
-		      getBaseContext().getResources().getDisplayMetrics());
+		changeLang("in");
+    	 exitButton.setVisibility(View.GONE);
+		counter = 7;
+	       menyeru_countDownTimer.start();
+	       timerHasStarted = true;
+	       startB.setText(textList.stop);
+	       title.setText(textList.calling);
+	       description.setText(textList.calling_desc);
+	       //forwardButton.setVisibility(View.VISIBLE);
+	       backwardButton.setVisibility(View.VISIBLE);
+	       pauseButton.setVisibility(View.VISIBLE);
+	       exitButton.setVisibility(View.VISIBLE);
+	       startB.setVisibility(View.GONE);
+	       restartButton.setVisibility(View.GONE);
+	       pauseButton.setText(textList.pause);
+	       r.play();
+	       englishButton.setVisibility(View.GONE);
+	        indonesiaButton.setVisibility(View.GONE);
+	        text.setVisibility(View.VISIBLE);
 	}
 	
-	public void setEnglishLocale()
+	public void setEnglishLocale(View v)
 	{
-		Locale locale = new Locale("en");
-		Locale.setDefault(locale);
-		Configuration config = new Configuration();
-		config.locale = locale;
-		getBaseContext().getResources().updateConfiguration(config,
-		      getBaseContext().getResources().getDisplayMetrics());
+		changeLang("en");
+    	 exitButton.setVisibility(View.GONE);
+		counter = 7;
+	       menyeru_countDownTimer.start();
+	       timerHasStarted = true;
+	       startB.setText(textList.stop);
+	       title.setText(textList.calling);
+	       description.setText(textList.calling_desc);
+	       //forwardButton.setVisibility(View.VISIBLE);
+	       backwardButton.setVisibility(View.VISIBLE);
+	       pauseButton.setVisibility(View.VISIBLE);
+	       exitButton.setVisibility(View.VISIBLE);
+	       startB.setVisibility(View.GONE);
+	       restartButton.setVisibility(View.GONE);
+	       pauseButton.setText(textList.pause);
+	       englishButton.setVisibility(View.GONE);
+	        indonesiaButton.setVisibility(View.GONE);
+	        text.setVisibility(View.VISIBLE);
+	       r.play();
 	}
 	
 	public void saveLocale(String lang)
