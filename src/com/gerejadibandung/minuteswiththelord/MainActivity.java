@@ -410,6 +410,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		       startB.setVisibility(View.GONE);
 		       restartButton.setVisibility(View.GONE);
 		       pauseButton.setText(textList.pause);
+		       r.play();
 		} else {
 		    	  //Stop All Activated timer
 		       menyeru_countDownTimer.cancel();
