@@ -13,15 +13,17 @@ import java.util.Locale;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.Html;
+import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -144,8 +146,8 @@ public class MainActivity extends Activity implements OnClickListener {
         restartButton.setVisibility(View.GONE);
         
         //Check Fist Install
-        boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
-        if (firstrun){
+        //boolean firstrun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("firstrun", true);
+        //if (firstrun){
         	final CharSequence[] gender = {"English (US)","Bahasa Indonesia"};
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("")
@@ -156,18 +158,40 @@ public class MainActivity extends Activity implements OnClickListener {
                     	   if(gender[which]=="English (US)")
                            {
                            	changeLang("en");
-                         	  setEnglishLocale();
-                         	  Intent intent = getIntent();
-                         	  finish();
-                         	  startActivity(intent);
+                         	 exitButton.setVisibility(View.GONE);
+                 			counter = 7;
+                 		       menyeru_countDownTimer.start();
+                 		       timerHasStarted = true;
+                 		       startB.setText(textList.stop);
+                 		       title.setText(textList.calling);
+                 		       description.setText(textList.calling_desc);
+                 		       //forwardButton.setVisibility(View.VISIBLE);
+                 		       backwardButton.setVisibility(View.VISIBLE);
+                 		       pauseButton.setVisibility(View.VISIBLE);
+                 		       exitButton.setVisibility(View.VISIBLE);
+                 		       startB.setVisibility(View.GONE);
+                 		       restartButton.setVisibility(View.GONE);
+                 		       pauseButton.setText(textList.pause);
+                 		       r.play();
                            }
                            else if (gender[which]=="Bahasa Indonesia")
                            {
                            	changeLang("in");
-                         	  setIndonesianLocale();
-                         	  Intent intent = getIntent();
-                         	  finish();
-                         	  startActivity(intent);
+                         	 exitButton.setVisibility(View.GONE);
+                 			counter = 7;
+                 		       menyeru_countDownTimer.start();
+                 		       timerHasStarted = true;
+                 		       startB.setText(textList.stop);
+                 		       title.setText(textList.calling);
+                 		       description.setText(textList.calling_desc);
+                 		       //forwardButton.setVisibility(View.VISIBLE);
+                 		       backwardButton.setVisibility(View.VISIBLE);
+                 		       pauseButton.setVisibility(View.VISIBLE);
+                 		       exitButton.setVisibility(View.VISIBLE);
+                 		       startB.setVisibility(View.GONE);
+                 		       restartButton.setVisibility(View.GONE);
+                 		       pauseButton.setText(textList.pause);
+                 		       r.play();
                            }
                    }
             });
@@ -178,11 +202,11 @@ public class MainActivity extends Activity implements OnClickListener {
             .edit()
             .putBoolean("firstrun", false)
             .commit();
-        }
-        else
+        //}
+        /*else
         {
         	loadLocale();
-        }
+        }*/
         
         textListInit(); //Strings initialization
         title.setText(textList.title);
@@ -196,6 +220,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onPause();
 		pauseTime();
 	}
+    
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+      // refresh your views here
+    	textListInit();
+      super.onConfigurationChanged(newConfig);
+    }
     
     public void pauseTime()
     {
@@ -245,7 +276,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		else if (counter == 5)
 		{
-			showExitAlert(4);
+			showExitAlert(5.5);
 		}
 		else if (counter == 4)
 		{
@@ -253,11 +284,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		else if (counter == 3)
 		{
-			showExitAlert(2.5);
+			showExitAlert(2);
 		}
 		else if (counter == 2)
 		{
-			showExitAlert(2);
+			showExitAlert(1.5);
 		}
 		else if (counter == 1)
 		{
@@ -273,9 +304,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void showExitAlert(double menit)
 	{
+		Typeface boldFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
+        //startB.setTypeface(boldFont);
+		
 		pauseTime();
 		AlertDialog alertbox = new AlertDialog.Builder(this)
-	    .setMessage(textList.alert_message1+" ["+ menit + " " + textList.alert_message3+" " +textList.alert_message2)
+	    .setMessage(textList.alert_message1+" "+Html.fromHtml("<b>"+" ["+"</b>")+ Html.fromHtml("<b>"+menit+"</b>") + " " + Html.fromHtml("<b>"+textList.alert_message3+"</b>")+" " +textList.alert_message2)
 	    .setPositiveButton("RESUME", new DialogInterface.OnClickListener() {
 
 	        // do something when the button is clicked
@@ -462,7 +496,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		else if (counter == 5)
 		{
-			showExitAlert(4);
+			showExitAlert(5.5);
 		}
 		else if (counter == 4)
 		{
@@ -470,11 +504,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		else if (counter == 3)
 		{
-			showExitAlert(2.5);
+			showExitAlert(2);
 		}
 		else if (counter == 2)
 		{
-			showExitAlert(2);
+			showExitAlert(1.5);
 		}
 		else if (counter == 1)
 		{
@@ -767,5 +801,12 @@ public class MainActivity extends Activity implements OnClickListener {
 	    android.content.res.Configuration config = new android.content.res.Configuration();
 	    config.locale = myLocale;
 	    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+	    
+	    Resources res = getResources();
+	    DisplayMetrics dm = res.getDisplayMetrics();
+	    Configuration conf = res.getConfiguration();
+	    conf.locale = myLocale;
+	    res.updateConfiguration(conf, dm);
+	    onConfigurationChanged(conf);
 	}
 }
