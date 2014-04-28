@@ -119,10 +119,11 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="210dp"
+        android:layout_marginBottom="300dp"
         android:background="@layout/custom_button"
         android:textColor="#FFFFFF"
         android:onClick="setEnglishLocale"
+        android:textSize="14sp"
         android:text="English (US)" />
 
     <Button
@@ -131,10 +132,24 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="240dp"
         android:background="@layout/custom_button"
         android:textColor="#FFFFFF"
         android:onClick="setIndonesianLocale"
+        android:textSize="14sp"
         android:text="Bahasa Indonesia" />
+    
+    <Button
+        android:id="@+id/buttonSpanish"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="180dp"
+        android:background="@layout/custom_button"
+        android:textColor="#FFFFFF"
+        android:onClick="setSpanishLocale"
+        android:textSize="14sp"
+        android:text="Spanish" />
 
 </RelativeLayout>

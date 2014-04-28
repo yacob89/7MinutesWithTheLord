@@ -43,6 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button restartButton;
 	 private Button englishButton;
 	 private Button indonesiaButton;
+	 private Button spanishButton;
 	 private ImageButton forwardButton;
 	 private ImageButton backwardButton;
 	 public TextView text;
@@ -104,6 +105,7 @@ public class MainActivity extends Activity implements OnClickListener {
         restartButton = (Button) this.findViewById(R.id.buttonRestart);
         englishButton = (Button) this.findViewById(R.id.buttonEnglish);
         indonesiaButton = (Button) this.findViewById(R.id.buttonIndonesia);
+        spanishButton = (Button) this.findViewById(R.id.buttonSpanish);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -137,6 +139,7 @@ public class MainActivity extends Activity implements OnClickListener {
         pauseButton.setTypeface(mFont);
         englishButton.setTypeface(mFont);
         indonesiaButton.setTypeface(mFont);
+        spanishButton.setTypeface(mFont);
         
         // Keep The screen on during activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -153,6 +156,7 @@ public class MainActivity extends Activity implements OnClickListener {
         text.setVisibility(View.GONE);
         englishButton.setVisibility(View.VISIBLE);
         indonesiaButton.setVisibility(View.VISIBLE);
+        spanishButton.setVisibility(View.VISIBLE);
         
         /*
         //Check Fist Install
@@ -455,6 +459,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		       restartButton.setVisibility(View.GONE);
 		       englishButton.setVisibility(View.GONE);
 		        indonesiaButton.setVisibility(View.GONE);
+		        spanishButton.setVisibility(View.GONE);
 		        text.setVisibility(View.VISIBLE);
 		       pauseButton.setText(textList.pause);
 		       r.play();
@@ -769,30 +774,24 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void setIndonesianLocale(View v)
 	{
 		changeLang("in");
-    	 exitButton.setVisibility(View.GONE);
-		counter = 7;
-	       menyeru_countDownTimer.start();
-	       timerHasStarted = true;
-	       startB.setText(textList.stop);
-	       title.setText(textList.calling);
-	       description.setText(textList.calling_desc);
-	       //forwardButton.setVisibility(View.VISIBLE);
-	       backwardButton.setVisibility(View.VISIBLE);
-	       pauseButton.setVisibility(View.VISIBLE);
-	       exitButton.setVisibility(View.VISIBLE);
-	       startB.setVisibility(View.GONE);
-	       restartButton.setVisibility(View.GONE);
-	       pauseButton.setText(textList.pause);
-	       r.play();
-	       englishButton.setVisibility(View.GONE);
-	        indonesiaButton.setVisibility(View.GONE);
-	        text.setVisibility(View.VISIBLE);
+    	setupGeneralUILocale();
 	}
 	
 	public void setEnglishLocale(View v)
 	{
 		changeLang("en");
-    	 exitButton.setVisibility(View.GONE);
+		setupGeneralUILocale();
+	}
+	
+	public void setSpanishLocale(View v)
+	{
+		changeLang("es");
+		setupGeneralUILocale();
+	}
+	
+	public void setupGeneralUILocale()
+	{
+		exitButton.setVisibility(View.GONE);
 		counter = 7;
 	       menyeru_countDownTimer.start();
 	       timerHasStarted = true;
@@ -808,6 +807,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	       pauseButton.setText(textList.pause);
 	       englishButton.setVisibility(View.GONE);
 	        indonesiaButton.setVisibility(View.GONE);
+	        spanishButton.setVisibility(View.GONE);
 	        text.setVisibility(View.VISIBLE);
 	       r.play();
 	}
