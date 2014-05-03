@@ -26,12 +26,15 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000c;
+        public static final int action_settings=0x7f09000f;
         public static final int button=0x7f090000;
         public static final int buttonBackward=0x7f090006;
+        public static final int buttonChinese=0x7f09000d;
         public static final int buttonEnglish=0x7f090009;
         public static final int buttonForward=0x7f090007;
+        public static final int buttonGerman=0x7f09000e;
         public static final int buttonIndonesia=0x7f09000a;
+        public static final int buttonKorean=0x7f09000c;
         public static final int buttonPause=0x7f090005;
         public static final int buttonRestart=0x7f090008;
         public static final int buttonSpanish=0x7f09000b;
@@ -43,8 +46,14 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int bottom_button=0x7f030001;
-        public static final int custom_button=0x7f030002;
-        public static final int custom_button_2=0x7f030003;
+        public static final int button_style_chinese=0x7f030002;
+        public static final int button_style_english=0x7f030003;
+        public static final int button_style_german=0x7f030004;
+        public static final int button_style_indonesia=0x7f030005;
+        public static final int button_style_korean=0x7f030006;
+        public static final int button_style_spanish=0x7f030007;
+        public static final int custom_button=0x7f030008;
+        public static final int custom_button_2=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f080000;
@@ -70,6 +79,13 @@ public final class R {
         public static final int forward=0x7f060018;
         public static final int halelujah=0x7f060015;
         public static final int hello_world=0x7f060002;
+        public static final int number_1=0x7f060026;
+        public static final int number_15=0x7f060025;
+        public static final int number_2=0x7f060024;
+        public static final int number_3=0x7f060023;
+        public static final int number_55=0x7f060022;
+        public static final int number_65=0x7f060021;
+        public static final int number_7=0x7f060020;
         public static final int pause=0x7f06001a;
         public static final int petition=0x7f060012;
         public static final int petition_desc=0x7f060013;

@@ -44,6 +44,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button englishButton;
 	 private Button indonesiaButton;
 	 private Button spanishButton;
+	 private Button koreanButton;
+	 private Button chineseButton;
+	 private Button germanButton;
 	 private ImageButton forwardButton;
 	 private ImageButton backwardButton;
 	 public TextView text;
@@ -106,6 +109,9 @@ public class MainActivity extends Activity implements OnClickListener {
         englishButton = (Button) this.findViewById(R.id.buttonEnglish);
         indonesiaButton = (Button) this.findViewById(R.id.buttonIndonesia);
         spanishButton = (Button) this.findViewById(R.id.buttonSpanish);
+        koreanButton = (Button) this.findViewById(R.id.buttonKorean);
+        chineseButton = (Button) this.findViewById(R.id.buttonChinese);
+        germanButton = (Button) this.findViewById(R.id.buttonGerman);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -140,6 +146,9 @@ public class MainActivity extends Activity implements OnClickListener {
         englishButton.setTypeface(mFont);
         indonesiaButton.setTypeface(mFont);
         spanishButton.setTypeface(mFont);
+        koreanButton.setTypeface(mFont);
+        chineseButton.setTypeface(mFont);
+        germanButton.setTypeface(mFont);
         
         // Keep The screen on during activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -157,6 +166,9 @@ public class MainActivity extends Activity implements OnClickListener {
         englishButton.setVisibility(View.VISIBLE);
         indonesiaButton.setVisibility(View.VISIBLE);
         spanishButton.setVisibility(View.VISIBLE);
+        koreanButton.setVisibility(View.VISIBLE);
+        chineseButton.setVisibility(View.VISIBLE);
+        germanButton.setVisibility(View.VISIBLE);
         
         /*
         //Check Fist Install
@@ -232,7 +244,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-		pauseTime();
+		//pauseTime();
 	}
     
     @Override
@@ -282,31 +294,31 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		if (counter == 7)
 		{
-			showExitAlert(7);
+			showExitAlert(textList.number_7);
 		}
 		else if (counter == 6)
 		{
-			showExitAlert(6.5);
+			showExitAlert(textList.number_65);
 		}
 		else if (counter == 5)
 		{
-			showExitAlert(5.5);
+			showExitAlert(textList.number_55);
 		}
 		else if (counter == 4)
 		{
-			showExitAlert(3);
+			showExitAlert(textList.number_3);
 		}
 		else if (counter == 3)
 		{
-			showExitAlert(2);
+			showExitAlert(textList.number_2);
 		}
 		else if (counter == 2)
 		{
-			showExitAlert(1.5);
+			showExitAlert(textList.number_15);
 		}
 		else if (counter == 1)
 		{
-			showExitAlert(1);
+			showExitAlert(textList.number_1);
 		}
 		else
 		{
@@ -316,7 +328,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	}
 	
-	public void showExitAlert(double menit)
+	public void showExitAlert(String menit)
 	{
 		Typeface boldFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
         //startB.setTypeface(boldFont);
@@ -460,6 +472,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		       englishButton.setVisibility(View.GONE);
 		        indonesiaButton.setVisibility(View.GONE);
 		        spanishButton.setVisibility(View.GONE);
+		        koreanButton.setVisibility(View.GONE);
+		        chineseButton.setVisibility(View.GONE);
+		        germanButton.setVisibility(View.GONE);
 		        text.setVisibility(View.VISIBLE);
 		       pauseButton.setText(textList.pause);
 		       r.play();
@@ -506,31 +521,31 @@ public class MainActivity extends Activity implements OnClickListener {
         //moveTaskToBack(true);
 		if (counter == 7)
 		{
-			showExitAlert(7);
+			showExitAlert(textList.number_7);
 		}
 		else if (counter == 6)
 		{
-			showExitAlert(6.5);
+			showExitAlert(textList.number_65);
 		}
 		else if (counter == 5)
 		{
-			showExitAlert(5.5);
+			showExitAlert(textList.number_55);
 		}
 		else if (counter == 4)
 		{
-			showExitAlert(3);
+			showExitAlert(textList.number_3);
 		}
 		else if (counter == 3)
 		{
-			showExitAlert(2);
+			showExitAlert(textList.number_2);
 		}
 		else if (counter == 2)
 		{
-			showExitAlert(1.5);
+			showExitAlert(textList.number_15);
 		}
 		else if (counter == 1)
 		{
-			showExitAlert(1);
+			showExitAlert(textList.number_1);
 		}
 		else
 		{
@@ -769,6 +784,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		textList.alert_message1 = getResources().getString(R.string.alert_message1);
 		textList.alert_message2 = getResources().getString(R.string.alert_message2);
 		textList.alert_message3 = getResources().getString(R.string.alert_message3);
+		textList.number_7 = getResources().getString(R.string.number_7);
+		textList.number_65 = getResources().getString(R.string.number_65);
+		textList.number_55 = getResources().getString(R.string.number_55);
+		textList.number_3 = getResources().getString(R.string.number_3);
+		textList.number_2 = getResources().getString(R.string.number_2);
+		textList.number_15 = getResources().getString(R.string.number_15);
+		textList.number_1 = getResources().getString(R.string.number_1);
 	}
 	
 	public void setIndonesianLocale(View v)
@@ -786,6 +808,24 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void setSpanishLocale(View v)
 	{
 		changeLang("es");
+		setupGeneralUILocale();
+	}
+	
+	public void setKoreanLocale(View v)
+	{
+		changeLang("ko");
+		setupGeneralUILocale();
+	}
+	
+	public void setChineseLocale(View v)
+	{
+		changeLang("zh");
+		setupGeneralUILocale();
+	}
+	
+	public void setGermanLocale(View v)
+	{
+		changeLang("de");
 		setupGeneralUILocale();
 	}
 	
@@ -808,6 +848,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	       englishButton.setVisibility(View.GONE);
 	        indonesiaButton.setVisibility(View.GONE);
 	        spanishButton.setVisibility(View.GONE);
+	        koreanButton.setVisibility(View.GONE);
+	        chineseButton.setVisibility(View.GONE);
+	        germanButton.setVisibility(View.GONE);
 	        text.setVisibility(View.VISIBLE);
 	       r.play();
 	}

@@ -24,8 +24,9 @@
         android:id="@+id/timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="180dp"
         android:textColor="#66CCFF"
         android:textSize="50sp"
         android:text="" />
@@ -119,8 +120,8 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="300dp"
-        android:background="@layout/custom_button"
+        android:layout_marginBottom="360dp"
+        android:background="@layout/button_style_english"
         android:textColor="#FFFFFF"
         android:onClick="setEnglishLocale"
         android:textSize="14sp"
@@ -132,8 +133,8 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="240dp"
-        android:background="@layout/custom_button"
+        android:layout_marginBottom="300dp"
+        android:background="@layout/button_style_indonesia"
         android:textColor="#FFFFFF"
         android:onClick="setIndonesianLocale"
         android:textSize="14sp"
@@ -145,11 +146,50 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="180dp"
-        android:background="@layout/custom_button"
+        android:layout_marginBottom="240dp"
+        android:background="@layout/button_style_spanish"
         android:textColor="#FFFFFF"
         android:onClick="setSpanishLocale"
         android:textSize="14sp"
         android:text="Spanish" />
+    
+    <Button
+        android:id="@+id/buttonKorean"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="180dp"
+        android:background="@layout/button_style_korean"
+        android:textColor="#000000"
+        android:onClick="setKoreanLocale"
+        android:textSize="14sp"
+        android:text="한국어" />
+    
+    <Button
+        android:id="@+id/buttonChinese"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
+        android:background="@layout/button_style_chinese"
+        android:textColor="#000000"
+        android:onClick="setChineseLocale"
+        android:textSize="14sp"
+        android:text="中文(简体)" />
+    
+    <Button
+        android:id="@+id/buttonGerman"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:background="@layout/button_style_german"
+        android:textColor="#000000"
+        android:onClick="setGermanLocale"
+        android:textSize="14sp"
+        android:text="Deutsch" />
 
 </RelativeLayout>

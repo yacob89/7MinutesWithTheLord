@@ -32,6 +32,13 @@ public class TextList {
 	public String alert_message1;
 	public String alert_message2;
 	public String alert_message3;
+	public String number_7;
+	public String number_65;
+	public String number_55;
+	public String number_3;
+	public String number_2;
+	public String number_15;
+	public String number_1;
 	
 	public String getStart() {
 		return start;
@@ -189,4 +196,48 @@ public class TextList {
 	public void setAlert_message3(String alert_message3) {
 		this.alert_message3 = alert_message3;
 	}
+	public String getNumber_7() {
+		return number_7;
+	}
+	public void setNumber_7(String number_7) {
+		this.number_7 = number_7;
+	}
+	public String getNumber_65() {
+		return number_65;
+	}
+	public void setNumber_65(String number_65) {
+		this.number_65 = number_65;
+	}
+	public String getNumber_55() {
+		return number_55;
+	}
+	public void setNumber_55(String number_55) {
+		this.number_55 = number_55;
+	}
+	public String getNumber_3() {
+		return number_3;
+	}
+	public void setNumber_3(String number_3) {
+		this.number_3 = number_3;
+	}
+	public String getNumber_2() {
+		return number_2;
+	}
+	public void setNumber_2(String number_2) {
+		this.number_2 = number_2;
+	}
+	public String getNumber_15() {
+		return number_15;
+	}
+	public void setNumber_15(String number_15) {
+		this.number_15 = number_15;
+	}
+	public String getNumber_1() {
+		return number_1;
+	}
+	public void setNumber_1(String number_1) {
+		this.number_1 = number_1;
+	}
+	
+	
 }
