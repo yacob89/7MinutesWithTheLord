@@ -114,13 +114,23 @@
         android:textSize="24sp"
         android:text="RESTART" />
 
+    <ScrollView 
+        android:id="@+id/scrollV"
+        android:layout_width="fill_parent" 
+        android:layout_height="360dp" 
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="60dp"
+        android:fadeScrollbars="false" > 
+    <LinearLayout android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        android:orientation="vertical" >
+
     <Button
         android:id="@+id/buttonIndonesia"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="360dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
         android:background="@layout/button_style_english"
         android:textColor="#FFFFFF"
         android:onClick="setIndonesianLocale"
@@ -129,11 +139,10 @@
 
     <Button
         android:id="@+id/buttonChinese"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@layout/button_style_indonesia"
         android:textColor="#FFFFFF"
         android:onClick="setChineseLocale"
@@ -142,11 +151,10 @@
     
     <Button
         android:id="@+id/buttonGerman"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="240dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@layout/button_style_spanish"
         android:textColor="#FFFFFF"
         android:onClick="setGermanLocale"
@@ -155,11 +163,10 @@
     
     <Button
         android:id="@+id/buttonEnglish"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="180dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@layout/button_style_korean"
         android:textColor="#000000"
         android:onClick="setEnglishLocale"
@@ -168,11 +175,10 @@
     
     <Button
         android:id="@+id/buttonKorean"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@layout/button_style_chinese"
         android:textColor="#000000"
         android:onClick="setKoreanLocale"
@@ -180,16 +186,29 @@
         android:text="한국어" />
     
     <Button
-        android:id="@+id/buttonSpanish"
-        android:layout_width="150dp"
+        android:id="@+id/buttonPortuguese"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@layout/button_style_por"
+        android:textColor="#000000"
+        android:onClick="setPortugueseLocale"
+        android:textSize="14sp"
+        android:text="Portuguese" />
+    
+    <Button
+        android:id="@+id/buttonSpanish"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@layout/button_style_german"
         android:textColor="#000000"
         android:onClick="setSpanishLocale"
         android:textSize="14sp"
     	android:text="Spanish" />
+    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

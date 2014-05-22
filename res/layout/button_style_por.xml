@@ -43,12 +43,12 @@
     <item>        
         <shape>
             <gradient
-                android:endColor="#99FFCC"
-                android:startColor="#99FFCC"
+                android:endColor="#66FFCC"
+                android:startColor="#66FFCC"
                 android:angle="270" />
             <stroke
                 android:width="3dp"
-                android:color="#99FFCC" />
+                android:color="#66FFCC" />
             <corners
                 android:radius="3dp" />
             <padding

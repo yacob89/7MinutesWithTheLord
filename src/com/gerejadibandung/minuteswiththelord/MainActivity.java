@@ -31,12 +31,14 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 	
 	public TextList textList;
 	 private boolean timerHasStarted = false;
+	 private boolean shouldLoadPortuguese = false;
 	 private Button startB;
 	 private Button exitButton;
 	 private Button pauseButton;
@@ -45,6 +47,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button indonesiaButton;
 	 private Button spanishButton;
 	 private Button koreanButton;
+	 private Button portugueseButton;
 	 private Button chineseButton;
 	 private Button germanButton;
 	 private ImageButton forwardButton;
@@ -52,6 +55,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 public TextView text;
 	 public TextView title;
 	 public TextView description;
+	 public ScrollView scrollV;
 	 private final long interval = 1 * 1000;
 	 
 	 private Uri notification;
@@ -110,11 +114,13 @@ public class MainActivity extends Activity implements OnClickListener {
         indonesiaButton = (Button) this.findViewById(R.id.buttonIndonesia);
         spanishButton = (Button) this.findViewById(R.id.buttonSpanish);
         koreanButton = (Button) this.findViewById(R.id.buttonKorean);
+        portugueseButton = (Button) this.findViewById(R.id.buttonPortuguese);
         chineseButton = (Button) this.findViewById(R.id.buttonChinese);
         germanButton = (Button) this.findViewById(R.id.buttonGerman);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
+        scrollV = (ScrollView) this.findViewById(R.id.scrollV);
         
         // Timer Initialization
         menyeru_countDownTimer = new MyCountDownTimer(menyeru_startTime, interval);
@@ -138,17 +144,31 @@ public class MainActivity extends Activity implements OnClickListener {
         Typeface mFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
         Typeface boldFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
         startB.setTypeface(mFont);
+        startB.setTextSize(12 * getResources().getDisplayMetrics().density);
         exitButton.setTypeface(mFont);
+        exitButton.setTextSize(7* getResources().getDisplayMetrics().density);
         text.setTypeface(mFont);
+        text.setTextSize(25* getResources().getDisplayMetrics().density);
         title.setTypeface(boldFont);
+        title.setTextSize(12* getResources().getDisplayMetrics().density);
         description.setTypeface(mFont);
+        description.setTextSize(9* getResources().getDisplayMetrics().density);
         pauseButton.setTypeface(mFont);
+        pauseButton.setTextSize(7* getResources().getDisplayMetrics().density);
         englishButton.setTypeface(mFont);
+        englishButton.setTextSize(7* getResources().getDisplayMetrics().density);
         indonesiaButton.setTypeface(mFont);
+        indonesiaButton.setTextSize(7* getResources().getDisplayMetrics().density);
         spanishButton.setTypeface(mFont);
+        spanishButton.setTextSize(7* getResources().getDisplayMetrics().density);
         koreanButton.setTypeface(mFont);
+        koreanButton.setTextSize(7* getResources().getDisplayMetrics().density);
+        portugueseButton.setTypeface(mFont);
+        portugueseButton.setTextSize(7* getResources().getDisplayMetrics().density);
         chineseButton.setTypeface(mFont);
+        chineseButton.setTextSize(7* getResources().getDisplayMetrics().density);
         germanButton.setTypeface(mFont);
+        germanButton.setTextSize(7* getResources().getDisplayMetrics().density);
         
         // Keep The screen on during activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -167,8 +187,11 @@ public class MainActivity extends Activity implements OnClickListener {
         indonesiaButton.setVisibility(View.VISIBLE);
         spanishButton.setVisibility(View.VISIBLE);
         koreanButton.setVisibility(View.VISIBLE);
+        portugueseButton.setVisibility(View.VISIBLE);
         chineseButton.setVisibility(View.VISIBLE);
         germanButton.setVisibility(View.VISIBLE);
+        //scrollV.setVisibility(View.VISIBLE);
+        scrollV.setVerticalScrollBarEnabled(true);
         
         /*
         //Check Fist Install
@@ -332,10 +355,19 @@ public class MainActivity extends Activity implements OnClickListener {
 	{
 		Typeface boldFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
         //startB.setTypeface(boldFont);
+		String frontGate;
+		if (shouldLoadPortuguese)
+		{
+			frontGate = "";
+		}
+		else
+		{
+			frontGate = " [";
+		}
 		
 		pauseTime();
 		AlertDialog alertbox = new AlertDialog.Builder(this)
-	    .setMessage(textList.alert_message1+" "+Html.fromHtml("<b>"+" ["+"</b>")+ Html.fromHtml("<b>"+menit+"</b>") + " " + Html.fromHtml("<b>"+textList.alert_message3+"</b>")+" " +textList.alert_message2)
+	    .setMessage(textList.alert_message1+" "+Html.fromHtml("<b>"+frontGate+"</b>")+ Html.fromHtml("<b>"+menit+"</b>") + " " + Html.fromHtml("<b>"+textList.alert_message3+"</b>")+" " +textList.alert_message2)
 	    .setPositiveButton("RESUME", new DialogInterface.OnClickListener() {
 
 	        // do something when the button is clicked
@@ -473,8 +505,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		        indonesiaButton.setVisibility(View.GONE);
 		        spanishButton.setVisibility(View.GONE);
 		        koreanButton.setVisibility(View.GONE);
+		        portugueseButton.setVisibility(View.GONE);
 		        chineseButton.setVisibility(View.GONE);
 		        germanButton.setVisibility(View.GONE);
+		        //scrollV.setVisibility(View.GONE);
 		        text.setVisibility(View.VISIBLE);
 		       pauseButton.setText(textList.pause);
 		       r.play();
@@ -797,36 +831,49 @@ public class MainActivity extends Activity implements OnClickListener {
 	{
 		changeLang("in");
     	setupGeneralUILocale();
+    	shouldLoadPortuguese = false;
 	}
 	
 	public void setEnglishLocale(View v)
 	{
 		changeLang("en");
 		setupGeneralUILocale();
+		shouldLoadPortuguese = false;
 	}
 	
 	public void setSpanishLocale(View v)
 	{
 		changeLang("es");
 		setupGeneralUILocale();
+		shouldLoadPortuguese = false;
 	}
 	
 	public void setKoreanLocale(View v)
 	{
 		changeLang("ko");
 		setupGeneralUILocale();
+		shouldLoadPortuguese = false;
+	}
+	
+	public void setPortugueseLocale(View v)
+	{
+		changeLang("pt");
+		setupGeneralUILocale();
+		shouldLoadPortuguese = true;
 	}
 	
 	public void setChineseLocale(View v)
 	{
 		changeLang("zh");
 		setupGeneralUILocale();
+		shouldLoadPortuguese = false;
 	}
 	
 	public void setGermanLocale(View v)
 	{
 		changeLang("de");
 		setupGeneralUILocale();
+		shouldLoadPortuguese = false;
 	}
 	
 	public void setupGeneralUILocale()
@@ -849,6 +896,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        indonesiaButton.setVisibility(View.GONE);
 	        spanishButton.setVisibility(View.GONE);
 	        koreanButton.setVisibility(View.GONE);
+	        portugueseButton.setVisibility(View.GONE);
 	        chineseButton.setVisibility(View.GONE);
 	        germanButton.setVisibility(View.GONE);
 	        text.setVisibility(View.VISIBLE);
