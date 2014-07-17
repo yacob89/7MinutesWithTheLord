@@ -49,6 +49,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button koreanButton;
 	 private Button portugueseButton;
 	 private Button chineseButton;
+	 private Button chineseTraditionalButton;
 	 private Button germanButton;
 	 private ImageButton forwardButton;
 	 private ImageButton backwardButton;
@@ -116,6 +117,7 @@ public class MainActivity extends Activity implements OnClickListener {
         koreanButton = (Button) this.findViewById(R.id.buttonKorean);
         portugueseButton = (Button) this.findViewById(R.id.buttonPortuguese);
         chineseButton = (Button) this.findViewById(R.id.buttonChinese);
+        chineseTraditionalButton = (Button) this.findViewById(R.id.buttonChineseTaiwan);
         germanButton = (Button) this.findViewById(R.id.buttonGerman);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
@@ -167,6 +169,8 @@ public class MainActivity extends Activity implements OnClickListener {
         portugueseButton.setTextSize(7* getResources().getDisplayMetrics().density);
         chineseButton.setTypeface(mFont);
         chineseButton.setTextSize(7* getResources().getDisplayMetrics().density);
+        chineseTraditionalButton.setTypeface(mFont);
+        chineseTraditionalButton.setTextSize(7* getResources().getDisplayMetrics().density);
         germanButton.setTypeface(mFont);
         germanButton.setTextSize(7* getResources().getDisplayMetrics().density);
         
@@ -189,6 +193,7 @@ public class MainActivity extends Activity implements OnClickListener {
         koreanButton.setVisibility(View.VISIBLE);
         portugueseButton.setVisibility(View.VISIBLE);
         chineseButton.setVisibility(View.VISIBLE);
+        chineseTraditionalButton.setVisibility(View.VISIBLE);
         germanButton.setVisibility(View.VISIBLE);
         //scrollV.setVisibility(View.VISIBLE);
         scrollV.setVerticalScrollBarEnabled(true);
@@ -507,6 +512,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		        koreanButton.setVisibility(View.GONE);
 		        portugueseButton.setVisibility(View.GONE);
 		        chineseButton.setVisibility(View.GONE);
+		        chineseTraditionalButton.setVisibility(View.GONE);
 		        germanButton.setVisibility(View.GONE);
 		        //scrollV.setVisibility(View.GONE);
 		        text.setVisibility(View.VISIBLE);
@@ -869,6 +875,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		shouldLoadPortuguese = false;
 	}
 	
+	public void setChineseTraditionalLocale(View v)
+	{
+		changeLang("zt");
+		setupGeneralUILocale();
+		shouldLoadPortuguese = false;
+	}
+	
 	public void setGermanLocale(View v)
 	{
 		changeLang("de");
@@ -898,6 +911,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        koreanButton.setVisibility(View.GONE);
 	        portugueseButton.setVisibility(View.GONE);
 	        chineseButton.setVisibility(View.GONE);
+	        chineseTraditionalButton.setVisibility(View.GONE);
 	        germanButton.setVisibility(View.GONE);
 	        text.setVisibility(View.VISIBLE);
 	       r.play();
