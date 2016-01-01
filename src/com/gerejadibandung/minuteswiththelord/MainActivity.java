@@ -8,8 +8,6 @@
 
 package com.gerejadibandung.minuteswiththelord;
 
-import java.util.Locale;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -34,6 +32,8 @@ import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends Activity implements OnClickListener {
 	
 	public TextList textList;
@@ -51,6 +51,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	 private Button chineseButton;
 	 private Button chineseTraditionalButton;
 	 private Button germanButton;
+	private Button tagalogButton;
+	private Button russianButton;
+	private Button ukrainianButton;
 	 private ImageButton forwardButton;
 	 private ImageButton backwardButton;
 	 public TextView text;
@@ -119,6 +122,9 @@ public class MainActivity extends Activity implements OnClickListener {
         chineseButton = (Button) this.findViewById(R.id.buttonChinese);
         chineseTraditionalButton = (Button) this.findViewById(R.id.buttonChineseTaiwan);
         germanButton = (Button) this.findViewById(R.id.buttonGerman);
+		tagalogButton = (Button) this.findViewById(R.id.buttonTagalog);
+		russianButton = (Button) this.findViewById(R.id.buttonRussian);
+		ukrainianButton = (Button) this.findViewById(R.id.buttonUkrainian);
         text = (TextView) this.findViewById(R.id.timer);
         title = (TextView) this.findViewById(R.id.textView1);
         description = (TextView) this.findViewById(R.id.textView2);
@@ -173,6 +179,12 @@ public class MainActivity extends Activity implements OnClickListener {
         chineseTraditionalButton.setTextSize(7* getResources().getDisplayMetrics().density);
         germanButton.setTypeface(mFont);
         germanButton.setTextSize(7* getResources().getDisplayMetrics().density);
+		tagalogButton.setTypeface(mFont);
+		tagalogButton.setTextSize(7* getResources().getDisplayMetrics().density);
+		russianButton.setTypeface(mFont);
+		russianButton.setTextSize(7* getResources().getDisplayMetrics().density);
+		ukrainianButton.setTypeface(mFont);
+		ukrainianButton.setTextSize(7* getResources().getDisplayMetrics().density);
         
         // Keep The screen on during activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -195,6 +207,9 @@ public class MainActivity extends Activity implements OnClickListener {
         chineseButton.setVisibility(View.VISIBLE);
         chineseTraditionalButton.setVisibility(View.VISIBLE);
         germanButton.setVisibility(View.VISIBLE);
+		tagalogButton.setVisibility(View.VISIBLE);
+		russianButton.setVisibility(View.VISIBLE);
+		ukrainianButton.setVisibility(View.VISIBLE);
         //scrollV.setVisibility(View.VISIBLE);
         scrollV.setVerticalScrollBarEnabled(true);
         
@@ -514,6 +529,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		        chineseButton.setVisibility(View.GONE);
 		        chineseTraditionalButton.setVisibility(View.GONE);
 		        germanButton.setVisibility(View.GONE);
+			tagalogButton.setVisibility(View.GONE);
+			russianButton.setVisibility(View.GONE);
+			ukrainianButton.setVisibility(View.GONE);
 		        //scrollV.setVisibility(View.GONE);
 		        text.setVisibility(View.VISIBLE);
 		       pauseButton.setText(textList.pause);
@@ -888,6 +906,27 @@ public class MainActivity extends Activity implements OnClickListener {
 		setupGeneralUILocale();
 		shouldLoadPortuguese = false;
 	}
+
+	public void setTagalogLocale(View v)
+	{
+		changeLang("tl");
+		setupGeneralUILocale();
+		shouldLoadPortuguese = true;
+	}
+
+	public void setRussianLocale(View v)
+	{
+		changeLang("ru");
+		setupGeneralUILocale();
+		shouldLoadPortuguese = true;
+	}
+
+	public void setUkrainianLocale(View v)
+	{
+		changeLang("uk");
+		setupGeneralUILocale();
+		shouldLoadPortuguese = true;
+	}
 	
 	public void setupGeneralUILocale()
 	{
@@ -913,6 +952,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	        chineseButton.setVisibility(View.GONE);
 	        chineseTraditionalButton.setVisibility(View.GONE);
 	        germanButton.setVisibility(View.GONE);
+		tagalogButton.setVisibility(View.GONE);
+		russianButton.setVisibility(View.GONE);
+		ukrainianButton.setVisibility(View.GONE);
 	        text.setVisibility(View.VISIBLE);
 	       r.play();
 	}

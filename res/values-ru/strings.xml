@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">7 Minutes With The Lord</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="start">START</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">EXIT</string>
+
+    <string name="calling">Призывание</string>
+    <string name="calling_desc">Призывать имя Господа, чтобы обратить свой разум к нашему духу &#8211; 1Кор 12:3; Рим. 8:6; 10:12&#8211;13</string>
+
+    <string name="praying">Молитва</string>
+    <string name="praying_desc">Открывать, смягчать своё сердце и опустошать себя &#8211; 2Кор. 3:16; Пс. 62:8</string>
+
+    <string name="pray_reading">Молитвочтение</string>
+    <string name="pray_reading_desc">Использовать свой дух, чтобы молиться одним или двумя стихами. Обращать стихи в личную молитву &#8211; Эф. 6:17&#8211;18; 2Тим. 3:16</string>
+
+    <string name="confession">Исповедь</string>
+    <string name="confession_desc">Исповедовать грехи и проступки на нашей совести и удалять все преграды для общения. Просить и прощении и очищении &#8211; 1Ин. 1:7, 9;Пс. 66:18; Ис. 59:1&#8211;2</string>
+
+    <string name="consecration">Посвящение</string>
+    <string name="consecration_desc">По-свежему предоставить себя Господу, давая Ему полное основание в нас &#8211; Рим. 12:1&#8211;2; 6:13,19; Мк. 12:30</string>
+
+    <string name="thanksgiving">Благодарение</string>
+    <string name="thanksgiving_desc">Воздавать благодарение за всё: за всех людей, все обстоятельства и все вещи в нашей жизни, восхвалять Его &#8211; Ef. 5:20; 1 Ts. 5:18</string>
+
+    <string name="petition">Прошение</string>
+    <string name="petition_desc">Просить Господа в отношении нужд, роста и людей, которые нуждаются в спасении &#8211; 1Тим. 2:1; Эф. 6:18; Мф. 7:7; Пс. 143:8</string>
+
+    <string name="the_end">Конец</string>
+    <string name="halelujah">Аллилуйя</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
+
+    <string name="forward"> Forward </string>
+    <string name="backward"> Backward </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
+
+    <string name="desc"> desc </string>
+
+    <string name="alert_message1"> [Иисус] говорит&#8230;\'Так вы не смогли один час бодрствовать со Мной? [всего &#160; </string>
+    <string name="alert_message2"> Бодрствуйте и молитесь, чтобы не войти в искушение. Дух готов, но плоть слаба.\' (Мф. 26:40б&#8211;41) </string>
+    <string name="alert_message3"> минут]? </string>
+
+    <string name="number_7"> 7 </string>
+    <string name="number_65"> 6.5 </string>
+    <string name="number_55"> 5.5 </string>
+    <string name="number_3"> 3 </string>
+    <string name="number_2"> 2 </string>
+    <string name="number_15"> 1.5 </string>
+    <string name="number_1"> 1 </string>
+
+</resources>
