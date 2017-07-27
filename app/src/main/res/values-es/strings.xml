@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">7 Minutes With The Lord</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="start">START</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">EXIT</string>
+
+    <string name="calling">Invocar el nombre del Señor</string>
+    <string name="calling_desc">Invocar el nombre del Señor para poner nuestra mente en el espíritu &#8211; 1 Co.12:3; Rom. 8:6; 10:12&#8211;13</string>
+
+    <string name="praying">Orar</string>
+    <string name="praying_desc">Abrir nuestro corazón, suavizar nuestro corazón y vaciarnos a nosotros mismos. Decirle que lo amamos a Él &#8211; 2 Co. 3:16; Sal. 62:8</string>
+
+    <string name="pray_reading">Orar-leer</string>
+    <string name="pray_reading_desc">Usar nuestro espíritu ejercitado para orar uno o dos versículos. Tornar los versículos en una oración personal &#8211; Ef. 6:17&#8211;18; 2 Tim. 3:16</string>
+
+    <string name="confession">Confesión</string>
+    <string name="confession_desc">Confesar los pecados y las ofensas que están en nuestra conciencia y quitar todo lo que obstruye la comunión. Pedir perdón y lavamiento &#8211; 1 Jn 1:7, 9; Sal. 66:18; Is. 59:1&#8211;2</string>
+
+    <string name="consecration">Consagración</string>
+    <string name="consecration_desc">Presentarnos al Señor de manera fresca, dándole todo el terreno en nosotros &#8211; Rom. 12:1&#8211;2; 6:13,19; Marc 12:30</string>
+
+    <string name="thanksgiving">Dar gracias</string>
+    <string name="thanksgiving_desc">Dar gracias por todas las cosas, por todas las personas, situaciones y cosas en su vida y alabarlo a Él &#8211; Ef. 5:20; 1 Tes. 5:18</string>
+
+    <string name="petition">Petición</string>
+    <string name="petition_desc">Pedirle al Señor por las necesidades, el crecimiento y las personas que necesitan salvación &#8211; 1 Tim. 2:1: Ef. 6:18; Mat. 7:7; Sal. 143:8</string>
+
+    <string name="the_end">Fin</string>
+    <string name="halelujah">Aleluya</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
+
+    <string name="forward"> Forward </string>
+    <string name="backward"> Backward </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
+
+    <string name="desc"> desc </string>
+
+    <string name="alert"> [Jesús] dijo&#8230;\'¿Así que no habéis podido velar conmigo &#160;<b>%1$s minutos mas?</b> Velad y orad, para que no entréis en tentación; el espíritu está dispuesto, pero la carne es débil\' (Mat. 26:40b&#8211;41)</string>
+
+    <string name="number_7"> 7 </string>
+    <string name="number_65"> 6.5 </string>
+    <string name="number_55"> 5.5 </string>
+    <string name="number_3"> 3 </string>
+    <string name="number_2"> 2 </string>
+    <string name="number_15"> 1.5 </string>
+    <string name="number_1"> 1 </string>
+    <string name="select_language">seleccione el idioma</string>
+
+</resources>
