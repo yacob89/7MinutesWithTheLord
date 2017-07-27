@@ -52,4 +52,12 @@
     <string name="number_1"> 1 </string>
 
     <string name="select_language">Оберіть мову</string>
+    <string name="bahasa_indonesia">Bahasa Indonesia</string>
+    <string name="chinese_traditional">中文(繁體)</string>
+    <string name="korean">한국어</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="spanish">Spanish</string>
+    <string name="tagalog">Tagalog</string>
+    <string name="russian">Russian</string>
+    <string name="ukrainian">Ukrainian</string>
 </resources>

@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    tools:context="com.gerejadibandung.minuteswiththelord.PrayActivity">
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="startActivity"
+        android:textColor="#FFFFFF"
+        android:background="@layout/custom_button"
+        android:textSize="24sp"
+        android:text="@string/start" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="180dp"
+        android:textColor="#330066"
+        android:textSize="50sp"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/titlePray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="18dp"
+        android:textSize="24sp"
+        android:textColor="#330066"
+        android:text="@string/title" />
+
+    <TextView
+        android:id="@+id/prayDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/titlePray"
+        android:layout_marginTop="26dp"
+        android:textSize="18sp"
+        android:textColor="#330066"
+        android:gravity ="center"
+        android:text="@string/select_language" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="exitApp"
+        android:background="@layout/custom_button_2"
+        android:textSize="14sp"
+        android:text="@string/exit" />
+
+    <Button
+        android:id="@+id/buttonPause"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="pauseTimer"
+        android:textColor="#FFFFFF"
+        android:background="@layout/bottom_button"
+        android:text="@string/pause" />
+
+
+    <ImageButton
+    android:id="@+id/buttonBackward"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentBottom="true"
+    android:onClick="backwardTimer"
+    android:contentDescription="@string/desc"
+    android:src="@drawable/ic_action_rewind"
+    android:background="@layout/bottom_button"
+    android:text="@string/backward" />
+
+    <Button
+        android:id="@+id/buttonRestart"
+        android:layout_width="200dp"
+        android:layout_height="51dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:background="@layout/custom_button"
+        android:onClick="restartActivity"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:text="@string/reset" />
+
+
+</RelativeLayout>

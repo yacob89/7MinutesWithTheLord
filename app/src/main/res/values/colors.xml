@@ -6,4 +6,7 @@
     <color name="colorPrimaryDark">#993399</color>
     <color name="colorAccent">#6633CC</color>
     <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="primaryText">#330066</color>
 </resources>

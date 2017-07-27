@@ -29,7 +29,7 @@ import android.os.SystemClock;
  * {@link #onTick(long)} takes an amount of time to execute that is significant
  * compared to the countdown interval.
  */
-public abstract class CountDownTimer {
+abstract class CountDownTimer {
 
     /**
      * Millis since epoch when alarm should stop.
@@ -50,7 +50,7 @@ public abstract class CountDownTimer {
      * @param countDownInterval The interval along the way to receive
      *   {@link #onTick(long)} callbacks.
      */
-    public CountDownTimer(long millisInFuture, long countDownInterval) {
+    CountDownTimer(long millisInFuture, long countDownInterval) {
         mMillisInFuture = millisInFuture;
         mCountdownInterval = countDownInterval;
     }
@@ -58,7 +58,7 @@ public abstract class CountDownTimer {
     /**
      * Cancel the countdown.
      */
-    public final void cancel() {
+    final void cancel() {
         mHandler.removeMessages(MSG);
     }
 

@@ -52,5 +52,13 @@
     <string name="number_15"> 一.五 </string>
     <string name="number_1"> 一 </string>
     <string name="select_language">选择语言</string>
+    <string name="bahasa_indonesia">Bahasa Indonesia</string>
+    <string name="chinese_traditional">中文(繁體)</string>
+    <string name="korean">한국어</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="spanish">Spanish</string>
+    <string name="tagalog">Tagalog</string>
+    <string name="russian">Russian</string>
+    <string name="ukrainian">Ukrainian</string>
 
 </resources>
