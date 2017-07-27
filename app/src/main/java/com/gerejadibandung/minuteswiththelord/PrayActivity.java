@@ -129,7 +129,7 @@ public class PrayActivity extends AppCompatActivity {
             timer.setText(String.valueOf(menyeru_startTime));
             titlePray.setText(textList.calling);
             description.setText(textList.calling_desc);
-            backwardButton.setVisibility(View.GONE);
+            backwardButton.setVisibility(View.VISIBLE);
         } else if (counter == 6) {
             timer.setText(String.valueOf(berdoa_startTime));
             titlePray.setText(textList.praying);
