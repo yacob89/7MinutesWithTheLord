@@ -30,35 +30,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.buttonEnglish)
-    Button englishButton;
-    @BindView(R.id.buttonIndonesia)
-    Button indonesiaButton;
-    @BindView(R.id.buttonSpanish)
-    Button spanishButton;
-    @BindView(R.id.buttonKorean)
-    Button koreanButton;
-    @BindView(R.id.buttonPortuguese)
-    Button portugueseButton;
-    @BindView(R.id.buttonChinese)
-    Button chineseButton;
-    @BindView(R.id.buttonChineseTaiwan)
-    Button chineseTraditionalButton;
-    @BindView(R.id.buttonGerman)
-    Button germanButton;
-    @BindView(R.id.buttonTagalog)
-    Button tagalogButton;
-    @BindView(R.id.buttonRussian)
-    Button russianButton;
-    @BindView(R.id.buttonUkrainian)
-    Button ukrainianButton;
-    @BindView(R.id.titleMain)
-    TextView title;
-    @BindView(R.id.selectLanguageLabel)
-    TextView selectLanguage;
-
-    private Locale myLocale;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void changeLang(String lang) {
         if (lang != null && !lang.equalsIgnoreCase("")) {
-            myLocale = new Locale(lang);
+            Locale myLocale = new Locale(lang);
             saveLocale(lang);
             Locale.setDefault(myLocale);
             android.content.res.Configuration config = new android.content.res.Configuration();

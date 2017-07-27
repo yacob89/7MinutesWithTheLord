@@ -1,10 +1,14 @@
 package com.gerejadibandung.minuteswiththelord;
 
+import android.content.Context;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -14,6 +18,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -63,6 +69,9 @@ public class PrayActivity extends AppCompatActivity {
     private boolean fromPause = false;
 
     private Ringtone r;
+    private AudioManager myAudioManager;
+    private Uri path;
+    private MediaPlayer media;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +86,21 @@ public class PrayActivity extends AppCompatActivity {
         textListInit();
         initializeUI();
 
-        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Uri path = Uri.parse("android.resource://com.gerejadibandung.minuteswiththelord/" + R.raw.sirius);
+        path = Uri.parse("android.resource://com.gerejadibandung.minuteswiththelord/" + R.raw.sirius);
         r = RingtoneManager.getRingtone(getApplicationContext(), path);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        media = new MediaPlayer();
+        media.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        try {
+            media.setDataSource(getApplicationContext(), path);
+            media.prepare();
+        } catch (IOException | IllegalArgumentException | SecurityException | IllegalStateException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -87,6 +108,8 @@ public class PrayActivity extends AppCompatActivity {
         super.onPause();
         fromPause = true;
         pauseTime();
+        media.release();
+        media = null;
     }
 
     private void initializeUI() {
@@ -241,7 +264,6 @@ public class PrayActivity extends AppCompatActivity {
     public void textListInit() {
         textList = new TextList();
         textList.start = getResources().getString(R.string.start);
-        textList.title = getResources().getString(R.string.title);
         textList.exit = getResources().getString(R.string.exit);
         textList.calling = getResources().getString(R.string.calling);
         textList.calling_desc = getResources().getString(R.string.calling_desc);
@@ -348,7 +370,17 @@ public class PrayActivity extends AppCompatActivity {
         @Override
         public void onFinish() {
             timerHasStarted = false;
-            r.play();
+            myAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            if (myAudioManager.getRingerMode() == AudioManager.RINGER_MODE_NORMAL) {
+                r.play();
+            } else {
+                if (myAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC) > 0) {
+                    media.start();
+                } else {
+                    Vibrator v = (Vibrator) getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    v.vibrate(500);
+                }
+            }
             counter--;
             setNewTimeByCurrentProgress();
             setTextByCurrentProgress();
