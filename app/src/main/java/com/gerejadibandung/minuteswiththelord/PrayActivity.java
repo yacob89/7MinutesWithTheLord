@@ -288,6 +288,9 @@ public class PrayActivity extends AppCompatActivity {
         } else if (counter == 1) {
             showExitAlert(textList.number_1);
         } else {
+            if (continueTimer != null) {
+                continueTimer.cancel();
+            }
             finish();
             moveTaskToBack(true);
         }
@@ -308,7 +311,12 @@ public class PrayActivity extends AppCompatActivity {
                 .negativeText(R.string.force_exit)
                 .contentColorRes(R.color.black)
                 .onPositive((dialog, which) -> continueTime())
-                .onNegative((dialog, which) -> finish())
+                .onNegative((dialog, which) -> {
+                    if (continueTimer != null) {
+                        continueTimer.cancel();
+                    }
+                    finish();
+                })
                 .canceledOnTouchOutside(false)
                 .positiveColorRes(R.color.green)
                 .negativeColorRes(R.color.red)
