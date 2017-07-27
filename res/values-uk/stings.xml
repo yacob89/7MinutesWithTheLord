@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">7 Minutes With The Lord</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+    <string name="start">START</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">EXIT</string>
+
+    <string name="calling">Прикликати Ім’я Господа</string>
+    <string name="calling_desc">Прикликати Ім’я Господа для того, щоб повернути свій розум до духа &#8211; 1Кор 12:3; Рим. 8:6; 10:12&#8211;13</string>
+
+    <string name="praying">Молитва</string>
+    <string name="praying_desc">Відкривати своє серце, зм’якшувати своє серце и спустошувати себе. Казати Йому, що ми любимо Його &#8211; 2Кор. 3:16; Пс. 62:8</string>
+
+    <string name="pray_reading">Молитовне читання</string>
+    <string name="pray_reading_desc">Використовувати наш вправний дух для того, щоб молитися одним або двома віршами. Повернути вірші на особисту молитву &#8211; Еф. 6:17&#8211;18; 2 Тим. 3:16</string>
+
+    <string name="confession">Сповідь</string>
+    <string name="confession_desc">Сповідати гріхи та кривди на нашій совісті та прибрати всі перепони для спілкування. Просити прощення і очищення &#8211; 1Івана 1:7, 9;Пс. 66:18; Ісая 59:1&#8211;2</string>
+
+    <string name="consecration">Посвячення</string>
+    <string name="consecration_desc">Заново передати самих себе Господу, надаючи Йому повну підставу (щось робити) в нас. &#8211; Рим. 12:1&#8211;2; 6:13,19; Мк. 12:30</string>
+
+    <string name="thanksgiving">Подяка</string>
+    <string name="thanksgiving_desc">Дякувати за все, за всіх людей, ситуації і за все у вашому житті й славити Його &#8211; Еф. 5:20; 1 Солунян 5:18</string>
+
+    <string name="petition">Прохання</string>
+    <string name="petition_desc">Просити Господа за потреби, зростання та осіб, які потребують спасіння &#8211; 1Тим. 2:1; Еф. 6:18; Матвія 7:7; Пс. 143:8</string>
+
+    <string name="the_end">Кінець</string>
+    <string name="halelujah">Алілуя</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
+
+    <string name="forward"> Forward </string>
+    <string name="backward"> Backward </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
+
+    <string name="desc"> desc </string>
+
+    <string name="alert_message1"> [Ісус]  і промовив Петрові: Отак, не змогли ви й однієї години попильнувати зо Мною? [ &#160; </string>
+    <string name="alert_message2"> Пильнуйте й моліться, щоб не впасти на спробу, бадьорий бо дух, але немічне тіло.\' (Мф. 26:40б&#8211;41) </string>
+    <string name="alert_message3"> хвилин]? </string>
+
+    <string name="number_7"> 7 </string>
+    <string name="number_65"> 6.5 </string>
+    <string name="number_55"> 5.5 </string>
+    <string name="number_3"> 3 </string>
+    <string name="number_2"> 2 </string>
+    <string name="number_15"> 1.5 </string>
+    <string name="number_1"> 1 </string>
+
+</resources>

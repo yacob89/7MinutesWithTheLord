@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">7 Minutes With The Lord</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="start">START</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">EXIT</string>
+    
+    <string name="calling">Den Namen des Herrn anrufen</string>
+    <string name="calling_desc">Den Namen des Herrn anrufen um unser Verstand auf den Geist zu setzen &#8211; 1.Kor 12:3; Röm. 8:6; 10:12&#8211;13</string>
+    
+    <string name="praying">Beten</string>
+    <string name="praying_desc">Unser Herz öffnen, es weichmachen und unser sein entleeren. Sag Ihm dass, wir Ihn lieben. &#8211; 2. Kor 3:16; Ps. 62:8</string>
+    
+    <string name="pray_reading">Betenlesen</string>
+    <string name="pray_reading_desc">Benutz unseren geübten Geist um über einen Vers oder zwei Verse zu beten. Wende diese Verse ins persönliche Gebet an. &#8211; Eph. 6:17&#8211;18; 2.Tim 3:16</string>
+    
+    <string name="confession">Sünden bekennen</string>
+    <string name="confession_desc">Die Sünden und Verstöße in unser Gewissen bekennen um alle Hindernisse zu einer Gemeinschaft zu beseitigen. Bitten um eine Vergebung und Reinigung. &#8211; 1.Joh 1:7, 9; Ps. 66:18; Jes. 59:1&#8211;2</string>
+    
+    <string name="consecration">Sich hingeben</string>
+    <string name="consecration_desc">Sich dem Herrn erneut hingeben, Ihm den ganzen Boden in unser Sein hingeben. &#8211; Röm. 12:1&#8211;2; 6:13,19; Mk. 12:30</string>
+    
+    <string name="thanksgiving">Danksagung</string>
+    <string name="thanksgiving_desc">Sag Dank im allen Dingen; für alle Personen, Situationen und Dingen in deinem Leben und loben Ihn. &#8211; Eph. 5:20; 1.Thes 5:18</string>
+    
+    <string name="petition">Fürbitte</string>
+    <string name="petition_desc">Bittet dem Herrn um deine Bedürfnisse, deinen Wachstum und um Personen, die eine Errettung brauchen. &#8211; 1.Tim. 2:1: Eph. 6:18; Mt. 7:7; Ps. 143:8</string>
+
+    <string name="the_end">End</string>
+    <string name="halelujah">Hallelujah</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
+    
+    <string name="forward"> Forward </string>
+    <string name="backward"> Backward </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
+    
+    <string name="desc"> desc </string>
+    
+    <string name="alert_message1"> [Jesus] sagte&#8230;\'So könntet ihr nicht &#160; </string>
+    <string name="alert_message2"> mit Mir wachen? Wach und betet, damit ihr nicht in Versuchung geratet. Der Geist ist willig, aber das Fleisch ist schwach.\' (Mt. 26:40b&#8211;41) </string>
+    <string name="alert_message3"> Minuten länger]? </string>
+    
+    <string name="number_7"> 7 </string>
+    <string name="number_65"> 6.5 </string>
+    <string name="number_55"> 5.5 </string>
+    <string name="number_3"> 3 </string>
+    <string name="number_2"> 2 </string>
+    <string name="number_15"> 1.5 </string>
+    <string name="number_1"> 1 </string>
+    
+</resources>
