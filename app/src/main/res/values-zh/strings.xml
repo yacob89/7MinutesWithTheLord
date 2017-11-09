@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">7 Minutes With The Lord</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="start">START</string>
+    <string name="title">7 Minutes With The Lord</string>
+    <string name="exit">EXIT</string>
+    
+    <string name="calling">呼求主名</string>
+    <string name="calling_desc">藉着呼求主名，将心思置於灵 &#8211; 林前十二:3; 罗八:6; 十:12&#8211;13</string>
+    
+    <string name="praying">祷告</string>
+    <string name="praying_desc">敞开我们的心，软化我们的心并倒空自己，告诉祂：主阿！我爱你 &#8211; 林后三:16; 诗六十二:8</string>
+    
+    <string name="pray_reading">祷读</string>
+    <string name="pray_reading_desc">用我们操练过的灵祷读一至二节，把所读的经节化为自己个人的祷告 &#8211; 弗六:17&#8211;18; 提后三:16</string>
+    
+    <string name="confession">认罪</string>
+    <string name="confession_desc">凭着良心承认自己的罪与过犯，除去一切与主交通的拦阻，求主赦免并结净 &#8211; 约壹一:7, 9; 诗六十六:18; 赛五十九:1&#8211;2</string>
+    
+    <string name="consecration">奉献</string>
+    <string name="consecration_desc">更新自己的奉献，并使祂在我们里面得着完全的地位 &#8211; 罗十二:1&#8211;2; 六:13,19; 可十二:30</string>
+    
+    <string name="thanksgiving">感谢</string>
+    <string name="thanksgiving_desc">为着你在日常生活中的一切人，事，物，感谢祂并赞美祂 &#8211; 弗五:20; 帖前五:18</string>
+    
+    <string name="petition">祈求</string>
+    <string name="petition_desc">为着自己的需要，生命的长大，以及别人的得救，向主祈求 &#8211; 提前二:1: 弗六:18; 太七:7; 诗一百四十三:8</string>
+
+    <string name="the_end">结束</string>
+    <string name="halelujah">阿利路亚</string>
+    <string name="reset">RESTART</string>
+    <string name="stop">STOP</string>
+    
+    <string name="forward"> Forward </string>
+    <string name="backward"> Backward </string>
+    <string name="pause"> PAUSE </string>
+    <string name="unpause"> CONTINUE </string>
+    
+    <string name="desc"> desc </string>
+    
+    <string name="alert">[耶稣] 说&#8230;\'你们不能同我儆醒 &#160;%1$s 分钟 么？要儆醒祷告，免得入了试诱，你们的灵固然愿意，肉体却软弱了。\' (太二十六:40下&#8211;41) </string>
+
+    <string name="number_7"> 七 </string>
+    <string name="number_65"> 六.五 </string>
+    <string name="number_55"> 五.五 </string>
+    <string name="number_3"> 三 </string>
+    <string name="number_2"> 二 </string>
+    <string name="number_15"> 一.五 </string>
+    <string name="number_1"> 一 </string>
+    <string name="select_language">选择语言</string>
+    <string name="bahasa_indonesia">Bahasa Indonesia</string>
+    <string name="chinese_traditional">中文(繁體)</string>
+    <string name="korean">한국어</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="spanish">Spanish</string>
+    <string name="tagalog">Tagalog</string>
+    <string name="russian">Russian</string>
+    <string name="ukrainian">Ukrainian</string>
+
+</resources>

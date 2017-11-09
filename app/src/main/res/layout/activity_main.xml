@@ -1,0 +1,180 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/titleMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:textSize="24sp"
+        android:textColor="@color/primaryText"
+        android:text="@string/title" />
+
+    <TextView
+        android:id="@+id/selectLanguageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="26dp"
+        android:textSize="18sp"
+        android:textColor="@color/primaryText"
+        android:gravity ="center"
+        android:text="@string/select_language" />
+
+    <ScrollView
+        android:id="@+id/scrollV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:fadeScrollbars="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonIndonesia"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_english"
+                android:onClick="setIndonesianLocale"
+                android:text="@string/bahasa_indonesia"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonChineseTaiwan"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_traditional"
+                android:onClick="setChineseTraditionalLocale"
+                android:text="@string/chinese_traditional"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonChinese"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_indonesia"
+                android:onClick="setChineseLocale"
+                android:text="@string/chinese_language"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonGerman"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_spanish"
+                android:onClick="setGermanLocale"
+                android:text="@string/deutsch_language"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonEnglish"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_korean"
+                android:onClick="setEnglishLocale"
+                android:text="@string/english_us"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonKorean"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_chinese"
+                android:onClick="setKoreanLocale"
+                android:text="@string/korean"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonPortuguese"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_por"
+                android:onClick="setPortugueseLocale"
+                android:text="@string/portuguese"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonSpanish"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_german"
+                android:onClick="setSpanishLocale"
+                android:text="@string/spanish"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonTagalog"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_tagalog"
+                android:onClick="setTagalogLocale"
+                android:text="@string/tagalog"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonRussian"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_russian"
+                android:onClick="setRussianLocale"
+                android:text="@string/russian"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+
+            <Button
+                android:id="@+id/buttonUkrainian"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@layout/button_style_ukrainian"
+                android:onClick="setUkrainianLocale"
+                android:text="@string/ukrainian"
+                android:textColor="@color/black"
+                android:textSize="@dimen/button_text_size" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
