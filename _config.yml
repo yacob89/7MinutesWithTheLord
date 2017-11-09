@@ -2,7 +2,7 @@ title: 7minuteswiththelord
 description: Simple android app "7 Minutes With The Lord".
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-midnight
 
 gems:
   - jekyll-mentions
