@@ -26,6 +26,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+    // Init new Branch
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

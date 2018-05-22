@@ -3,7 +3,7 @@ apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.gerejadibandung.minuteswiththelord"
@@ -28,9 +28,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.afollestad.material-dialogs:core:0.9.4.5'
-    compile 'com.jakewharton:butterknife:8.7.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-v4:25.3.1'
+    implementation 'com.afollestad.material-dialogs:core:0.9.4.5'
+    implementation 'com.jakewharton:butterknife:8.7.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
 }
