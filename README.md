@@ -1,3 +1,7 @@
+# This project has been discontinued due to legacy code and somehow the app has been removed from Play Store
+
+Check this project instead: https://github.com/yacob89/sevenminutes-react
+
 # 7MinutesWithTheLord
 
 Android app "7 Minutes With The Lord".
