@@ -1,16 +1,12 @@
 # This project has been discontinued due to legacy code and somehow the app has been removed from Play Store
 
-Check this project instead: [https://github.com/yacob89/sevenminutes-react](https://github.com/yacob89/sevenminuteswiththelord-flutter)
+Check this project instead: [Seven Minutes With The Lord Flutter](https://github.com/yacob89/sevenminuteswiththelord-flutter)
 
 # 7MinutesWithTheLord
 
 Android app "7 Minutes With The Lord".
 
 The purpose of this app is to practice our daily Morning Revival.
-
-Google Playstore link:
-
-[![Google Play Badge](google-play-badge.png)](https://play.google.com/store/apps/details?id=com.gerejadibandung.minuteswiththelord)
 
 Current version: 2.1
 
