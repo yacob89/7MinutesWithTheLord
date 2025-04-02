@@ -1,6 +1,6 @@
 # This project has been discontinued due to legacy code and somehow the app has been removed from Play Store
 
-Check this project instead: https://github.com/yacob89/sevenminutes-react
+Check this project instead: [https://github.com/yacob89/sevenminutes-react](https://github.com/yacob89/sevenminuteswiththelord-flutter)
 
 # 7MinutesWithTheLord
 
